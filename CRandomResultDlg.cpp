@@ -90,9 +90,40 @@ BOOL CRandomResultDlg::OnInitDialog()
 	CString money;
 	CString health;
 
-	follower.Format(_T("팔로워 변화 : %d"), (m_bChoice) ? m_currentRandomEvent.GetYesFollower() : m_currentRandomEvent.GetNoFollower());
-	money.Format(_T("돈 변화 : %d"), (m_bChoice) ? m_currentRandomEvent.GetYesMoney() : m_currentRandomEvent.GetNoMoney());
-	health.Format(_T("체력 변화 : %d"), (m_bChoice) ? m_currentRandomEvent.GetYesHealth() : m_currentRandomEvent.GetNoHealth());
+	int dFollower;
+	int dMoney;
+	int dHealth;
+
+	if (m_bChoice) {
+		dFollower = m_currentRandomEvent.GetYesFollower();
+		dMoney = m_currentRandomEvent.GetYesMoney();
+		dHealth = m_currentRandomEvent.GetYesHealth();
+
+		dFollower = (Player::instance.GetFollower() + dFollower >= 0) ? dFollower : -Player::instance.GetFollower();
+		dMoney = (Player::instance.GetMoney() + dMoney >= 0) ? dMoney : -Player::instance.GetMoney();
+		dHealth = (Player::instance.GetHealth() + dHealth >= 0) ? dHealth : -Player::instance.GetHealth();
+
+		Player::instance.AddFollower(m_currentRandomEvent.GetYesFollower());
+		Player::instance.AddMoney(m_currentRandomEvent.GetYesMoney());
+		Player::instance.AddHealth(m_currentRandomEvent.GetYesHealth());
+	}
+	else {
+		dFollower = m_currentRandomEvent.GetNoFollower();
+		dMoney = m_currentRandomEvent.GetNoMoney();
+		dHealth = m_currentRandomEvent.GetNoHealth();
+
+		dFollower = (Player::instance.GetFollower() + dFollower >= 0) ? dFollower : -Player::instance.GetFollower();
+		dMoney = (Player::instance.GetMoney() + dMoney >= 0) ? dMoney : -Player::instance.GetMoney();
+		dHealth = (Player::instance.GetHealth() + dHealth >= 0) ? dHealth : -Player::instance.GetHealth();
+
+		Player::instance.AddFollower(m_currentRandomEvent.GetNoFollower());
+		Player::instance.AddMoney(m_currentRandomEvent.GetNoMoney());
+		Player::instance.AddHealth(m_currentRandomEvent.GetNoHealth());
+	}
+
+	follower.Format(_T("팔로워 변화 : %d"), dFollower);
+	money.Format(_T("돈 변화 : %d"), dMoney);
+	health.Format(_T("체력 변화 : %d"), dHealth);
 
 	m_tFollower.SetWindowTextW(follower);
 	m_tMoney.SetWindowTextW(money);

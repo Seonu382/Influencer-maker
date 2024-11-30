@@ -43,9 +43,6 @@ END_MESSAGE_MAP()
 void CRandomChoiceDlg::OnClickedYesButton()
 {
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
-	Player::instance.AddFollower(m_liveRandomEvent.GetYesFollower());
-	Player::instance.AddMoney(m_liveRandomEvent.GetYesMoney());
-	Player::instance.AddHealth(m_liveRandomEvent.GetYesHealth());
 	showRandomResultDlg(true);
 }
 
@@ -53,9 +50,6 @@ void CRandomChoiceDlg::OnClickedYesButton()
 void CRandomChoiceDlg::OnClickedNoButton()
 {
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
-	Player::instance.AddFollower(m_liveRandomEvent.GetNoFollower());
-	Player::instance.AddMoney(m_liveRandomEvent.GetNoMoney());
-	Player::instance.AddHealth(m_liveRandomEvent.GetNoHealth());
 	showRandomResultDlg(false);
 }
 
