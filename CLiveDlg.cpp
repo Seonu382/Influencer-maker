@@ -7,6 +7,8 @@
 #include "CLiveDlg.h"
 #include "CRandomChoiceDlg.h"
 #include "Player.h"
+#include "CLiveDlg.h"
+#include "CLiveChat.h"
 
 
 // CLiveDlg 대화 상자
@@ -26,6 +28,7 @@ CLiveDlg::~CLiveDlg()
 void CLiveDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
+	DDX_Control(pDX, IDC_LIVE_CHAT, m_cbLiveChat);
 }
 
 
@@ -77,6 +80,8 @@ BOOL CLiveDlg::OnInitDialog()
 	if (h_old_bitmap != NULL) ::DeleteObject(h_old_bitmap);
 	lamp_image.Detach();
 
+	m_cbLiveChat.ResetContent();
+
 	return TRUE;  // return TRUE unless you set the focus to a control
 	// 예외: OCX 속성 페이지는 FALSE를 반환해야 합니다.
 }
@@ -85,9 +90,19 @@ BOOL CLiveDlg::OnInitDialog()
 void CLiveDlg::OnTimer(UINT_PTR nIDEvent)
 {
 	// TODO: 여기에 메시지 처리기 코드를 추가 및/또는 기본값을 호출합니다.
-	//testing
+	bool positive = true;
+	auto selectedChats = CLiveChat::GetRandomChats(positive, 2);
+
+	for (const auto& chat : selectedChats)
+	{
+		CString chatStr(chat.GetChat().c_str());
+		m_cbLiveChat.AddString(chatStr);
+	}
+
+
 	if (nIDEvent == 0) {
 		showRandomChoice(false);
+			
 	}
 	else if (nIDEvent == 1) {
 		showRandomChoice(true);
