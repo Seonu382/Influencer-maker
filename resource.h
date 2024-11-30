@@ -37,8 +37,6 @@
 #define IDB_STORY2                      169
 #define IDB_BITMAP1                     170
 #define IDB_MAIN_HIGH                   170
-#define IDR_WAVE1                       171
-#define IDR_BGM                         171
 #define IDC_START_BUTTON                1000
 #define IDC_NAME                        1002
 #define IDC_NAME_EDIT                   1003
