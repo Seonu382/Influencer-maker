@@ -37,6 +37,8 @@
 #define IDB_STORY2                      169
 #define IDB_BITMAP1                     170
 #define IDB_MAIN_HIGH                   170
+#define IDD_SHOP_DIALOG                 172
+#define IDD_SHOPRESULT_DIALOG           174
 #define IDC_START_BUTTON                1000
 #define IDC_NAME                        1002
 #define IDC_NAME_EDIT                   1003
@@ -54,9 +56,11 @@
 #define IDC_BUTTON1                     1023
 #define IDC_YES_BUTTON                  1023
 #define IDC_NEXTDAY_BUTTON              1023
+#define IDC_SHOP_HEALTH                 1023
 #define IDC_BUTTON2                     1024
 #define IDC_NO_BUTTON                   1024
 #define IDC_NEXT_BUTTON                 1024
+#define IDC_SHOP_CAMERA                 1024
 #define IDC_BUTTON3                     1025
 #define IDC_MUKBANG_BUTTON              1025
 #define IDC_BUTTON4                     1026
@@ -86,7 +90,7 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        172
+#define _APS_NEXT_RESOURCE_VALUE        176
 #define _APS_NEXT_COMMAND_VALUE         32771
 #define _APS_NEXT_CONTROL_VALUE         1044
 #define _APS_NEXT_SYMED_VALUE           101
