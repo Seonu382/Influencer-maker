@@ -23,6 +23,8 @@ private:
 	int previousHealth;
 	int previousMoney;
 
+	int nextDayTrend;
+
 	int game;
 	int talk;
 	int mukbang;
@@ -82,6 +84,9 @@ public:
 		}
 		else health = 0;
 	}
+
+	void SetTrend(const int& _trend) { nextDayTrend = _trend; }
+	int GetTrend() const { return nextDayTrend; }
 
 	void SetGame(const int& _game) { game = _game; }
 	void SetTalk(const int& _talk) { talk = _talk; }
