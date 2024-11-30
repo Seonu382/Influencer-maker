@@ -108,6 +108,8 @@ BOOL CMainDlg::OnInitDialog()
 	CDialogEx::OnInitDialog();
 
 	// TODO:  여기에 추가 초기화 작업을 추가합니다.
+
+	// 그래픽 추가
 	Player::instance.UpdatePreviousStasis();
 
 	m_bbLiveButton.LoadBitmaps(IDB_SEL_LIVE, NULL, NULL, NULL);
@@ -133,6 +135,9 @@ BOOL CMainDlg::OnInitDialog()
 	HBITMAP h_old_bitmap = p_lamp_image->SetBitmap(lamp_image);
 	if (h_old_bitmap != NULL) ::DeleteObject(h_old_bitmap);
 	lamp_image.Detach();
+
+	// 초기화 작업
+	Player::instance.InitializePlayerStat();
 
 	return TRUE;  // return TRUE unless you set the focus to a control
 	// 예외: OCX 속성 페이지는 FALSE를 반환해야 합니다.
