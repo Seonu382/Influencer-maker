@@ -18,7 +18,6 @@
 #define IDD_LIVE_DIALOG                 144
 #define IDD_TRENDRESULT_DIALOG          146
 #define IDD_RANDOMRESULT_DIALOG         148
-#define IDB_BITMAP1                     150
 #define IDC_START_BUTTON                1000
 #define IDC_NAME                        1002
 #define IDC_NAME_EDIT                   1003
