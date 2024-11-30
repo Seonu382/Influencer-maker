@@ -231,6 +231,7 @@
     <None Include="res\Influencermaker.rc2" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\..\..\OneDrive\바탕 화면\KakaoTalk_20241129_230516186.bmp" />
     <Image Include="res\Influencer-maker.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
