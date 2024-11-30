@@ -188,5 +188,8 @@
     <Image Include="res\story (1).bmp">
       <Filter>리소스 파일</Filter>
     </Image>
+    <Image Include="res\main_image (2).bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
   </ItemGroup>
 </Project>

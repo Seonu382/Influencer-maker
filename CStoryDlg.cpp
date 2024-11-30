@@ -68,19 +68,43 @@ BOOL CStoryDlg::OnInitDialog()
 	// 예외: OCX 속성 페이지는 FALSE를 반환해야 합니다.
 }
 
+extern int count = 0;
 
 void CStoryDlg::OnClickedSkipButton()
 {
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
-	CMainDlg* pMainDlg = new CMainDlg();
-	pMainDlg->Create(IDD_MAIN_DIALOG);
+	
+    auto updateBackgroundAndSize = [this](UINT bitmapID) {
+        HBITMAP hBit = LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(bitmapID));
+        if (hBit != NULL) {
+            m_StoryBKG.SetBitmap(hBit);
+            CRect rt;
+            GetClientRect(&rt);
+            m_StoryBKG.SetWindowPos(NULL, 0, 0, rt.Width(), rt.Height(), SWP_SHOWWINDOW);
+            DeleteObject(hBit);
+        }
+    };
 
-	CRect parentRect, currentRect;
-	GetWindowRect(&parentRect);
-	pMainDlg->GetWindowRect(&currentRect);
-	pMainDlg->SetWindowPos(NULL, parentRect.left, parentRect.top, currentRect.Width(), currentRect.Height(), SWP_SHOWWINDOW);
+    if (count == 0) {
+        updateBackgroundAndSize(IDB_STORY2);
+        count++;
+    }
+    else if (count == 1) {
+        updateBackgroundAndSize(IDB_STORY3);
+        count++;
+    }
+    else if (count == 2) {
+        CMainDlg* pMainDlg = new CMainDlg();
+        pMainDlg->Create(IDD_MAIN_DIALOG);
 
-	DestroyWindow();
+        CRect parentRect, currentRect;
+        GetWindowRect(&parentRect);
+        pMainDlg->GetWindowRect(&currentRect);
+        pMainDlg->SetWindowPos(NULL, parentRect.left, parentRect.top, currentRect.Width(), currentRect.Height(), SWP_SHOWWINDOW);
+
+        DestroyWindow();
+        count = 0;
+    }
 }
 
 

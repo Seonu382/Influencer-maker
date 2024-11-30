@@ -124,7 +124,12 @@ BOOL CMainDlg::OnInitDialog()
 
 	CStatic* p_lamp_image = (CStatic*)GetDlgItem(IDC_MAIN);
 	CBitmap lamp_image;
-	lamp_image.LoadBitmap(IDB_MAIN_LOW);
+
+	if (Player::instance.GetFollower() >= 500000)
+		lamp_image.LoadBitmap(IDB_MAIN_HIGH);
+	else
+		lamp_image.LoadBitmap(IDB_MAIN_LOW);
+
 	HBITMAP h_old_bitmap = p_lamp_image->SetBitmap(lamp_image);
 	if (h_old_bitmap != NULL) ::DeleteObject(h_old_bitmap);
 	lamp_image.Detach();
@@ -163,3 +168,4 @@ HBRUSH CMainDlg::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 	// TODO:  기본값이 적당하지 않으면 다른 브러시를 반환합니다.
 	return hbr;
 }
+

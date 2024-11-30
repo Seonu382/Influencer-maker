@@ -244,6 +244,7 @@
     <Image Include="res\main_icon (1).bmp" />
     <Image Include="res\main_icon (2).bmp" />
     <Image Include="res\main_image (1).bmp" />
+    <Image Include="res\main_image (2).bmp" />
     <Image Include="res\main_select (1).bmp" />
     <Image Include="res\main_select (2).bmp" />
     <Image Include="res\main_select (3).bmp" />

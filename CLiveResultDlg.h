@@ -33,4 +33,6 @@ public:
 	CStatic m_tCurrentHealth;
 	CStatic m_tCurrentMoney;
 	virtual BOOL OnInitDialog();
+	afx_msg BOOL OnEraseBkgnd(CDC* pDC);
+	afx_msg HBRUSH OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor);
 };

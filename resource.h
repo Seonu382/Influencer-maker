@@ -35,6 +35,8 @@
 #define IDB_STORY1                      167
 #define IDB_STORY3                      168
 #define IDB_STORY2                      169
+#define IDB_BITMAP1                     170
+#define IDB_MAIN_HIGH                   170
 #define IDC_START_BUTTON                1000
 #define IDC_NAME                        1002
 #define IDC_NAME_EDIT                   1003
@@ -78,14 +80,13 @@
 #define IDC_CURRENTHEALTH               1040
 #define IDC_MAIN                        1041
 #define IDC_STORY_BKG                   1042
-#define IDC_LIST1                       1043
 #define IDC_LIVE_CHAT                   1043
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        170
+#define _APS_NEXT_RESOURCE_VALUE        171
 #define _APS_NEXT_COMMAND_VALUE         32771
 #define _APS_NEXT_CONTROL_VALUE         1044
 #define _APS_NEXT_SYMED_VALUE           101

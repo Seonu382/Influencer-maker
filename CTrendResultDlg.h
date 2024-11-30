@@ -26,4 +26,6 @@ public:
 	afx_msg void OnClickedNextdayButton();
 	void goNextDay();
 	void showMainDlg();
+	afx_msg BOOL OnEraseBkgnd(CDC* pDC);
+	afx_msg HBRUSH OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor);
 };

@@ -36,4 +36,6 @@ public:
 	CStatic m_tFollower;
 	CStatic m_tMoney;
 	CStatic m_tHealth;
+	afx_msg BOOL OnEraseBkgnd(CDC* pDC);
+	afx_msg HBRUSH OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor);
 };
