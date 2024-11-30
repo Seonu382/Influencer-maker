@@ -238,6 +238,7 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\..\OneDrive\바탕 화면\KakaoTalk_20241129_230516186.bmp" />
+    <Image Include="res\button_start.bmp" />
     <Image Include="res\Influencer-maker.ico" />
     <Image Include="res\live_image (1).bmp" />
     <Image Include="res\live_image (2).bmp" />
@@ -246,6 +247,7 @@
     <Image Include="res\live_image (5).bmp" />
     <Image Include="res\logo.bmp" />
     <Image Include="res\logo_50.bmp" />
+    <Image Include="res\logo_new.bmp" />
     <Image Include="res\logo_resized.bmp" />
     <Image Include="res\main_icon (1).bmp" />
     <Image Include="res\main_icon (2).bmp" />

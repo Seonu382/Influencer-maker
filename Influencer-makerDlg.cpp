@@ -74,6 +74,9 @@ CInfluencermakerDlg::CInfluencermakerDlg(CWnd* pParent /*=nullptr*/)
 void CInfluencermakerDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
+	//  DDX_Control(pDX, IDC_START_PIC, m_Start);
+	DDX_Control(pDX, IDC_START_PIC, m_StartBKG);
+	DDX_Control(pDX, IDC_START_BUTTON, m_bbStartButton);
 }
 
 BEGIN_MESSAGE_MAP(CInfluencermakerDlg, CDialogEx)
@@ -109,6 +112,15 @@ BOOL CInfluencermakerDlg::OnInitDialog()
 			pSysMenu->AppendMenu(MF_STRING, IDM_ABOUTBOX, strAboutMenu);
 		}
 	}
+
+	HBITMAP hBit = LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_LOGO_RERE));
+	m_StartBKG.SetBitmap(hBit);
+	CRect rt;
+	GetClientRect(&rt);
+	m_StartBKG.SetWindowPos(NULL, 0, 0, rt.Width(), rt.Height(), SWP_SHOWWINDOW);
+
+	m_bbStartButton.LoadBitmaps(IDB_START, NULL, NULL, NULL);
+	m_bbStartButton.SizeToContent();
 
 	// 이 대화 상자의 아이콘을 설정합니다.  응용 프로그램의 주 창이 대화 상자가 아닐 경우에는
 	//  프레임워크가 이 작업을 자동으로 수행합니다.

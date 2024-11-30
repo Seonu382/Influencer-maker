@@ -33,4 +33,7 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	afx_msg void OnClickedStartButton();
+//	CStatic m_Start;
+	CStatic m_StartBKG;
+	CBitmapButton m_bbStartButton;
 };
