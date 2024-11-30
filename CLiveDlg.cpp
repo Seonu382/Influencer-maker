@@ -31,6 +31,8 @@ void CLiveDlg::DoDataExchange(CDataExchange* pDX)
 
 BEGIN_MESSAGE_MAP(CLiveDlg, CDialogEx)
 	ON_WM_TIMER()
+	ON_WM_CTLCOLOR()
+	ON_WM_ERASEBKGND()
 END_MESSAGE_MAP()
 
 
@@ -61,6 +63,7 @@ BOOL CLiveDlg::OnInitDialog()
 		lamp_image.LoadBitmap(IDB_LIVE_MUKBANG);
 		break;
 	case BEAUTY:
+		lamp_image.LoadBitmap(IDB_LIVE_BEAUTY);
 		break;
 
 	case EXERCISE:
@@ -108,4 +111,38 @@ void CLiveDlg::showRandomChoice(bool _afterLive)
 	GetWindowRect(&parentRect);
 	pRandomChoiceDlg->GetWindowRect(&currentRect);
 	pRandomChoiceDlg->SetWindowPos(NULL, parentRect.left, parentRect.top, currentRect.Width(), currentRect.Height(), SWP_SHOWWINDOW);
+}
+
+HBRUSH CLiveDlg::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
+{
+	if (nCtlColor == CTLCOLOR_LISTBOX) {
+		if (pWnd->GetDlgCtrlID() == IDC_LIVE_CHAT) {
+			// Change text color
+			pDC->SetTextColor(RGB(0, 0, 0)); // Yellow text
+
+			// Change background color
+			pDC->SetBkColor(RGB(253, 253, 253));
+
+			// Use a brush to set the background color
+			static CBrush brush(RGB(253, 253, 253));
+			return (HBRUSH)brush.GetSafeHandle();
+		}
+	}
+
+	// Default handling for other controls
+	return CDialogEx::OnCtlColor(pDC, pWnd, nCtlColor);
+}
+
+
+
+BOOL CLiveDlg::OnEraseBkgnd(CDC* pDC)
+{
+	// TODO: 여기에 메시지 처리기 코드를 추가 및/또는 기본값을 호출합니다.
+	CRect rect;
+	GetClientRect(rect);
+
+	pDC->FillSolidRect(rect, RGB(253, 253, 253));
+	return TRUE;
+
+	return CDialogEx::OnEraseBkgnd(pDC);
 }
