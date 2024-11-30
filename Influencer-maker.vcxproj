@@ -192,6 +192,8 @@
     <ClInclude Include="CRandomChoiceDlg.h" />
     <ClInclude Include="CRandomResultDlg.h" />
     <ClInclude Include="CResultDlg.h" />
+    <ClInclude Include="CShopDlg.h" />
+    <ClInclude Include="CShopResultDlg.h" />
     <ClInclude Include="CStoryDlg.h" />
     <ClInclude Include="CTrendResultDlg.h" />
     <ClInclude Include="framework.h" />
@@ -213,6 +215,8 @@
     <ClCompile Include="CRandomChoiceDlg.cpp" />
     <ClCompile Include="CRandomResultDlg.cpp" />
     <ClCompile Include="CResultDlg.cpp" />
+    <ClCompile Include="CShopDlg.cpp" />
+    <ClCompile Include="CShopResultDlg.cpp" />
     <ClCompile Include="CStoryDlg.cpp" />
     <ClCompile Include="CTrendResultDlg.cpp" />
     <ClCompile Include="RandomEvent.cpp" />
