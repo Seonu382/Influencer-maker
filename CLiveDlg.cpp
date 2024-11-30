@@ -6,6 +6,7 @@
 #include "afxdialogex.h"
 #include "CLiveDlg.h"
 #include "CRandomChoiceDlg.h"
+#include "Player.h"
 
 
 // CLiveDlg 대화 상자
@@ -42,6 +43,36 @@ BOOL CLiveDlg::OnInitDialog()
 
 	// TODO:  여기에 추가 초기화 작업을 추가합니다.
 	SetTimer(0, 3000, NULL);
+
+	CStatic* p_lamp_image = (CStatic*)GetDlgItem(IDC_LIVE);
+	CBitmap lamp_image;
+	HBITMAP h_old_bitmap = nullptr;
+
+
+	switch (Player::instance.GetCurrentTheme())
+	{
+	case GAME:
+		lamp_image.LoadBitmap(IDB_LIVE_GAME);
+		break;
+	case TALK:
+		lamp_image.LoadBitmap(IDB_LIVE_TALK);
+		break;
+	case MUKBANG:
+		lamp_image.LoadBitmap(IDB_LIVE_MUKBANG);
+		break;
+	case BEAUTY:
+		break;
+
+	case EXERCISE:
+		lamp_image.LoadBitmap(IDB_LIVE_EXERCISE);
+		break;
+	default:
+		break;
+	}
+
+	h_old_bitmap = p_lamp_image->SetBitmap(lamp_image);
+	if (h_old_bitmap != NULL) ::DeleteObject(h_old_bitmap);
+	lamp_image.Detach();
 
 	return TRUE;  // return TRUE unless you set the focus to a control
 	// 예외: OCX 속성 페이지는 FALSE를 반환해야 합니다.

@@ -25,4 +25,6 @@ public:
 	void FadeIn();
 	virtual BOOL OnInitDialog();
 	afx_msg void OnClickedSkipButton();
+	afx_msg void OnPaint();
+	CStatic m_StoryBKG;
 };

@@ -31,4 +31,10 @@ public:
 	CStatic m_tHealth;
 	CStatic m_tMoney;
 	virtual BOOL OnInitDialog();
+	CBitmapButton m_bbLiveButton;
+	CBitmapButton m_bbRestButton;
+	CBitmapButton m_bbShopButton;
+	CBitmapButton m_bbTrendButton;
+	afx_msg BOOL OnEraseBkgnd(CDC* pDC);
+	afx_msg HBRUSH OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor);
 };

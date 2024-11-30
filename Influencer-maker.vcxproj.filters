@@ -134,5 +134,59 @@
     <Image Include="..\..\..\OneDrive\바탕 화면\KakaoTalk_20241129_230516186.bmp">
       <Filter>리소스 파일</Filter>
     </Image>
+    <Image Include="res\logo.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\logo_50.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\logo_resized.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\live_image (5).bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\live_image (1).bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\live_image (2).bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\live_image (3).bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\live_image (4).bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\main_select (1).bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\main_select (2).bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\main_select (3).bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\main_select (4).bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\main_image (1).bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\main_icon (2).bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\main_icon (1).bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\story (3).bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\story (2).bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\story (1).bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
   </ItemGroup>
 </Project>

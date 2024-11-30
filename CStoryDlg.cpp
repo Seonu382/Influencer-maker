@@ -25,11 +25,13 @@ CStoryDlg::~CStoryDlg()
 void CStoryDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
+	DDX_Control(pDX, IDC_STORY_BKG, m_StoryBKG);
 }
 
 
 BEGIN_MESSAGE_MAP(CStoryDlg, CDialogEx)
 	ON_BN_CLICKED(IDC_SKIP_BUTTON, &CStoryDlg::OnClickedSkipButton)
+	ON_WM_PAINT()
 END_MESSAGE_MAP()
 
 
@@ -55,6 +57,13 @@ BOOL CStoryDlg::OnInitDialog()
 
 	SetLayeredWindowAttributes(0, 0, LWA_ALPHA);
 
+	HBITMAP hBit = LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_STORY1));
+	m_StoryBKG.SetBitmap(hBit);
+	CRect rt;
+	GetClientRect(&rt);
+	m_StoryBKG.SetWindowPos(NULL, 0, 0, rt.Width(), rt.Height(), SWP_SHOWWINDOW);
+
+
 	return TRUE;  // return TRUE unless you set the focus to a control
 	// 예외: OCX 속성 페이지는 FALSE를 반환해야 합니다.
 }
@@ -72,4 +81,14 @@ void CStoryDlg::OnClickedSkipButton()
 	pMainDlg->SetWindowPos(NULL, parentRect.left, parentRect.top, currentRect.Width(), currentRect.Height(), SWP_SHOWWINDOW);
 
 	DestroyWindow();
+}
+
+
+void CStoryDlg::OnPaint()
+{
+	CPaintDC dc(this); // device context for painting
+	// TODO: 여기에 메시지 처리기 코드를 추가합니다.
+	
+
+	// 그리기 메시지에 대해서는 CDialogEx::OnPaint()을(를) 호출하지 마십시오.
 }

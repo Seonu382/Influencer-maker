@@ -30,6 +30,10 @@ void CMainDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_FOLLOWER, m_tFollower);
 	DDX_Control(pDX, IDC_HEALTH, m_tHealth);
 	DDX_Control(pDX, IDC_MONEY, m_tMoney);
+	DDX_Control(pDX, IDC_LIVE_BUTTON, m_bbLiveButton);
+	DDX_Control(pDX, IDC_REST_BUTTON, m_bbRestButton);
+	DDX_Control(pDX, IDC_SHOP_BUTTON, m_bbShopButton);
+	DDX_Control(pDX, IDC_TREND_BUTTON, m_bbTrendButton);
 }
 
 
@@ -37,6 +41,8 @@ BEGIN_MESSAGE_MAP(CMainDlg, CDialogEx)
 	ON_BN_CLICKED(IDC_LIVE_BUTTON, &CMainDlg::OnClickedLiveButton)
 	ON_BN_CLICKED(IDC_TREND_BUTTON, &CMainDlg::OnClickedTrendButton)
 	ON_WM_PAINT()
+	ON_WM_ERASEBKGND()
+	ON_WM_CTLCOLOR()
 END_MESSAGE_MAP()
 
 
@@ -104,6 +110,56 @@ BOOL CMainDlg::OnInitDialog()
 	// TODO:  여기에 추가 초기화 작업을 추가합니다.
 	Player::instance.UpdatePreviousStasis();
 
+	m_bbLiveButton.LoadBitmaps(IDB_SEL_LIVE, NULL, NULL, NULL);
+	m_bbLiveButton.SizeToContent();
+
+	m_bbTrendButton.LoadBitmaps(IDB_SEL_TREND, NULL, NULL, NULL);
+	m_bbTrendButton.SizeToContent();
+
+	m_bbShopButton.LoadBitmaps(IDB_SEL_SHOP, NULL, NULL, NULL);
+	m_bbShopButton.SizeToContent();
+
+	m_bbRestButton.LoadBitmaps(IDB_SEL_REST, NULL, NULL, NULL);
+	m_bbRestButton.SizeToContent();
+
+	CStatic* p_lamp_image = (CStatic*)GetDlgItem(IDC_MAIN);
+	CBitmap lamp_image;
+	lamp_image.LoadBitmap(IDB_MAIN_LOW);
+	HBITMAP h_old_bitmap = p_lamp_image->SetBitmap(lamp_image);
+	if (h_old_bitmap != NULL) ::DeleteObject(h_old_bitmap);
+	lamp_image.Detach();
+
 	return TRUE;  // return TRUE unless you set the focus to a control
 	// 예외: OCX 속성 페이지는 FALSE를 반환해야 합니다.
+}
+
+
+BOOL CMainDlg::OnEraseBkgnd(CDC* pDC)
+{
+	// TODO: 여기에 메시지 처리기 코드를 추가 및/또는 기본값을 호출합니다.
+
+	CRect rect;
+	GetClientRect(rect);
+
+	pDC->FillSolidRect(rect, RGB(253, 253, 253));
+	return TRUE;
+
+	return CDialogEx::OnEraseBkgnd(pDC);
+}
+
+
+HBRUSH CMainDlg::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
+{
+	HBRUSH hbr = CDialogEx::OnCtlColor(pDC, pWnd, nCtlColor);
+
+	// TODO:  여기서 DC의 특성을 변경합니다.
+
+	if (nCtlColor == CTLCOLOR_STATIC)
+	{
+		pDC->SetBkColor(RGB(253, 253, 253));
+		hbr = ::CreateSolidBrush(RGB(253, 253, 253));
+	}
+
+	// TODO:  기본값이 적당하지 않으면 다른 브러시를 반환합니다.
+	return hbr;
 }

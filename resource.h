@@ -18,6 +18,24 @@
 #define IDD_LIVE_DIALOG                 144
 #define IDD_TRENDRESULT_DIALOG          146
 #define IDD_RANDOMRESULT_DIALOG         148
+#define IDB_LOGO                        151
+#define IDB_LOGO_RE                     154
+#define IDB_LIVE_GAME                   155
+#define IDB_LIVE_TALK                   156
+#define IDB_LIVE_MUKBANG                157
+#define IDB_LIVE_EXERCISE               158
+#define IDB_LIVE_BEAUTY                 159
+#define IDB_SEL_LIVE                    160
+#define IDB_SEL_TREND                   161
+#define IDB_SEL_SHOP                    162
+#define IDB_SEL_REST                    163
+#define IDB_MAIN_LOW                    164
+#define IDB_ICON_HEALTH                 165
+#define IDB_ICON_COIN                   166
+#define IDB_STORY1                      167
+#define IDB_STORY3                      168
+#define IDB_BITMAP1                     169
+#define IDB_STORY2                      169
 #define IDC_START_BUTTON                1000
 #define IDC_NAME                        1002
 #define IDC_NAME_EDIT                   1003
@@ -43,6 +61,7 @@
 #define IDC_BUTTON4                     1026
 #define IDC_STATIC1                     1026
 #define IDC_BEAUTY_BUTTON               1026
+#define IDC_LIVE                        1026
 #define IDC_BUTTON5                     1027
 #define IDC_CONFIRM_BUTTON              1027
 #define IDC_EXERCISE_BUTTON             1027
@@ -58,14 +77,16 @@
 #define IDC_CURRENTMONEY                1038
 #define IDC_PREVIOUSHEALTH              1039
 #define IDC_CURRENTHEALTH               1040
+#define IDC_MAIN                        1041
+#define IDC_STORY_BKG                   1042
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        151
+#define _APS_NEXT_RESOURCE_VALUE        170
 #define _APS_NEXT_COMMAND_VALUE         32771
-#define _APS_NEXT_CONTROL_VALUE         1041
+#define _APS_NEXT_CONTROL_VALUE         1043
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif
