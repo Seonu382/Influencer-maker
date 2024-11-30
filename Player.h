@@ -16,8 +16,8 @@ private:
 	int currentTheme;
 
 	int follower;
-	int health;
 	int money;
+	int health;
 
 	int previousFollower;
 	int previousHealth;
@@ -29,9 +29,22 @@ private:
 	int beauty;
 	int exercise;
 
+	int nextGame;
+	int nextTalk;
+	int nextMukbang;
+	int nextBeauty;
+	int nextExercise;
+
+	int skilledGame;
+	int skilledTalk;
+	int skilledMukbang;
+	int skilledBeauty;
+	int skilledExercise;
+
 public:
-	Player() : name("¿µÈñ"), day(1), follower(0), health(100), money(0),
-	game(1), talk(1), mukbang(1), beauty(1), exercise(1)
+	Player() : name("¿µÈñ"), day(1), follower(100), money(100), health(100),
+		game(1), talk(1), mukbang(1), beauty(1), exercise(1),
+		skilledGame(0), skilledTalk(0), skilledMukbang(0), skilledBeauty(0), skilledExercise(0)
 	{}
 
 	static void InitializePlayerStat();
@@ -71,19 +84,40 @@ public:
 	}
 
 	void SetGame(const int& _game) { game = _game; }
-	int GetGame() const { return game; }
-
 	void SetTalk(const int& _talk) { talk = _talk; }
-	int GetTalk() const { return talk; }
-
 	void SetMukbang(const int& _mukbang) { mukbang = _mukbang; }
-	int GetMukbang() const { return mukbang; }
-
 	void SetBeauty(const int& _beauty) { beauty = _beauty; }
-	int GetBeauty() const { return beauty; }
-
 	void SetExercise(const int& _exercise) { exercise = _exercise; }
+
+	int GetGame() const { return game; }
+	int GetTalk() const { return talk; }
+	int GetMukbang() const { return mukbang; }
+	int GetBeauty() const { return beauty; }
 	int GetExercise() const { return exercise; }
+
+	void SetNextGame(const int& _nextGame) { nextGame = _nextGame; }
+	void SetNextTalk(const int& _nextTalk) { nextTalk = _nextTalk; }
+	void SetNextMukbang(const int& _nextMukbang) { nextMukbang = _nextMukbang; }
+	void SetNextBeauty(const int& _nextBeauty) { nextBeauty = _nextBeauty; }
+	void SetNextExercise(const int& _nextExercise) { nextExercise = _nextExercise; }
+
+	int GetNextGame() const { return nextGame; }
+	int GetNextTalk() const { return nextTalk; }
+	int GetNextMukbang() const { return nextMukbang; }
+	int GetNextBeauty() const { return nextBeauty; }
+	int GetNextExercise() const { return nextExercise; }
+
+	void SkilledGame() { skilledGame += 2; }
+	void SkilledTalk() { skilledTalk += 2; }
+	void SkilledMukbang() { skilledMukbang += 2; }
+	void SkilledBeauty() { skilledBeauty += 2; }
+	void SkilledExercise() { skilledExercise += 2; }
+
+	int GetSkilledGame() const { return skilledGame; }
+	int GetSkilledTalk() const { return skilledTalk; }
+	int GetSkilledMukbang() const { return skilledMukbang; }
+	int GetSkilledBeauty() const { return skilledBeauty; }
+	int GetSkilledExercise() const { return skilledExercise; }
 
 	void SetCurrentTheme(const int& _theme) { currentTheme = _theme; }
 	int GetCurrentTheme() const { return currentTheme; }

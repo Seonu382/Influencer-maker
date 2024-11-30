@@ -95,32 +95,32 @@ BOOL CLiveResultDlg::OnInitDialog()
 
 	case GAME:
 		dFollower = Player::instance.GetGame();
-		Player::instance.SetGame(Player::instance.GetGame() + 1);
+		Player::instance.SkilledGame();
 		break;
 
 	case TALK:
 		dFollower = Player::instance.GetTalk();
-		Player::instance.SetTalk(Player::instance.GetTalk() + 1);
+		Player::instance.SkilledTalk();
 		break;
 
 	case MUKBANG:
 		dFollower = Player::instance.GetMukbang();
-		Player::instance.SetMukbang(Player::instance.GetMukbang() + 1);
+		Player::instance.SkilledMukbang();
 		break;
 
 	case BEAUTY:
 		dFollower = Player::instance.GetBeauty();
-		Player::instance.SetBeauty(Player::instance.GetBeauty() + 1);
+		Player::instance.SkilledBeauty();
 		break;
 
 	case EXERCISE:
 		dFollower = Player::instance.GetExercise();
-		Player::instance.SetExercise(Player::instance.GetExercise() + 1);
+		Player::instance.SkilledExercise();
 		break;
 
 	}
 
-	Player::instance.AddFollower(static_cast<int>(Player::instance.GetFollower() * dFollower / 100.0f));
+	Player::instance.AddFollower(static_cast<int>(Player::instance.GetFollower() * dFollower / 1000.0f));
 
 	CString previousFollower;
 	CString previousMoney;

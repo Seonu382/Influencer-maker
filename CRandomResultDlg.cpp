@@ -97,30 +97,30 @@ BOOL CRandomResultDlg::OnInitDialog()
 	int dHealth;
 
 	if (m_bChoice) {
-		dFollower = m_currentRandomEvent.GetYesFollower();
-		dMoney = m_currentRandomEvent.GetYesMoney();
+		dFollower = static_cast<int>(ceil(Player::instance.GetFollower() * (m_currentRandomEvent.GetYesFollower() / 100.0f)));
+		dMoney = static_cast<int>(ceil(Player::instance.GetMoney() * (m_currentRandomEvent.GetYesMoney() / 100.0f)));
 		dHealth = m_currentRandomEvent.GetYesHealth();
 
 		dFollower = (Player::instance.GetFollower() + dFollower >= 0) ? dFollower : -Player::instance.GetFollower();
 		dMoney = (Player::instance.GetMoney() + dMoney >= 0) ? dMoney : -Player::instance.GetMoney();
 		dHealth = (Player::instance.GetHealth() + dHealth >= 0) ? dHealth : -Player::instance.GetHealth();
 
-		Player::instance.AddFollower(m_currentRandomEvent.GetYesFollower());
-		Player::instance.AddMoney(m_currentRandomEvent.GetYesMoney());
-		Player::instance.AddHealth(m_currentRandomEvent.GetYesHealth());
+		Player::instance.AddFollower(dFollower);
+		Player::instance.AddMoney(dMoney);
+		Player::instance.AddHealth(dHealth);
 	}
 	else {
-		dFollower = m_currentRandomEvent.GetNoFollower();
-		dMoney = m_currentRandomEvent.GetNoMoney();
+		dFollower = static_cast<int>(ceil(Player::instance.GetFollower() * (m_currentRandomEvent.GetNoFollower() / 100.0f)));
+		dMoney = static_cast<int>(ceil(Player::instance.GetMoney() * (m_currentRandomEvent.GetNoMoney() / 100.0f)));
 		dHealth = m_currentRandomEvent.GetNoHealth();
 
 		dFollower = (Player::instance.GetFollower() + dFollower >= 0) ? dFollower : -Player::instance.GetFollower();
 		dMoney = (Player::instance.GetMoney() + dMoney >= 0) ? dMoney : -Player::instance.GetMoney();
 		dHealth = (Player::instance.GetHealth() + dHealth >= 0) ? dHealth : -Player::instance.GetHealth();
 
-		Player::instance.AddFollower(m_currentRandomEvent.GetNoFollower());
-		Player::instance.AddMoney(m_currentRandomEvent.GetNoMoney());
-		Player::instance.AddHealth(m_currentRandomEvent.GetNoHealth());
+		Player::instance.AddFollower(dFollower);
+		Player::instance.AddMoney(dMoney);
+		Player::instance.AddHealth(dHealth);
 	}
 
 	follower.Format(_T("팔로워 변화 : %d"), dFollower);

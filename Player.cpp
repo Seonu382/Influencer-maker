@@ -6,27 +6,73 @@
 Player Player::instance;
 
 void Player::InitializePlayerStat() {
-	std::vector<int> stats(5, 0);
+	srand(static_cast<unsigned int>(time(NULL)));
 
-	int totalPoint = 15;
-	int remainingPoint = totalPoint;
+	CString debug;
+	int randomTrend = (rand() % 5) + 1;
 
-	for (int i = 0; i < 5; ++i)
-	{
-		stats[i] = 1;
-		--remainingPoint;
+	Player::instance.SetGame(Player::instance.GetNextGame());
+	Player::instance.SetTalk(Player::instance.GetNextTalk());
+	Player::instance.SetMukbang(Player::instance.GetNextMukbang());
+	Player::instance.SetBeauty(Player::instance.GetNextBeauty());
+	Player::instance.SetExercise(Player::instance.GetNextExercise());
+
+	
+	switch (randomTrend) {
+	case GAME:
+		Player::instance.SetNextGame(170 + Player::instance.GetSkilledGame());
+		Player::instance.SetNextTalk((rand() % 5) * 10 + 70 + Player::instance.GetSkilledTalk());
+		Player::instance.SetNextMukbang((rand() % 5) * 10 + 70 + Player::instance.GetSkilledMukbang());
+		Player::instance.SetNextBeauty((rand() % 5) * 10 + 70 + Player::instance.GetSkilledBeauty());
+		Player::instance.SetNextExercise((rand() % 5) * 10 + 70 + Player::instance.GetSkilledExercise());
+		break;
+
+	case TALK:
+		Player::instance.SetNextGame((rand() % 5) * 10 + 70 + Player::instance.GetSkilledGame());
+		Player::instance.SetNextTalk(170 + Player::instance.GetSkilledTalk());
+		Player::instance.SetNextMukbang((rand() % 5) * 10 + 70 + Player::instance.GetSkilledMukbang());
+		Player::instance.SetNextBeauty((rand() % 5) * 10 + 70 + Player::instance.GetSkilledBeauty());
+		Player::instance.SetNextExercise((rand() % 5) * 10 + 70 + Player::instance.GetSkilledExercise());
+		break;
+
+	case MUKBANG:
+		Player::instance.SetNextGame((rand() % 5) * 10 + 70 + Player::instance.GetSkilledGame());
+		Player::instance.SetNextTalk((rand() % 5) * 10 + 70 + Player::instance.GetSkilledTalk());
+		Player::instance.SetNextMukbang(170 + Player::instance.GetSkilledMukbang());
+		Player::instance.SetNextBeauty((rand() % 5) * 10 + 70 + Player::instance.GetSkilledBeauty());
+		Player::instance.SetNextExercise((rand() % 5) * 10 + 70 + Player::instance.GetSkilledExercise());
+		break;
+
+	case BEAUTY:
+		Player::instance.SetNextGame((rand() % 5) * 10 + 70 + Player::instance.GetSkilledGame());
+		Player::instance.SetNextTalk((rand() % 5) * 10 + 70 + Player::instance.GetSkilledTalk());
+		Player::instance.SetNextMukbang((rand() % 5) * 10 + 70 + Player::instance.GetSkilledMukbang());
+		Player::instance.SetNextBeauty(170 + Player::instance.GetSkilledBeauty());
+		Player::instance.SetNextExercise((rand() % 5) * 10 + 70 + Player::instance.GetSkilledExercise());
+		break;
+
+	case EXERCISE:
+		Player::instance.SetNextGame((rand() % 5) * 10 + 70 + Player::instance.GetSkilledGame());
+		Player::instance.SetNextTalk((rand() % 5) * 10 + 70 + Player::instance.GetSkilledTalk());
+		Player::instance.SetNextMukbang((rand() % 5) * 10 + 70 + Player::instance.GetSkilledMukbang());
+		Player::instance.SetNextBeauty((rand() % 5) * 10 + 70 + Player::instance.GetSkilledBeauty());
+		Player::instance.SetNextExercise(170 + Player::instance.GetSkilledExercise());
+		break;
 	}
 
-	while (remainingPoint > 0)
-	{
-		int randomIndex = rand() % 5; // 0∫Œ≈Õ 4±Ó¡ˆ ∑£¥˝ ¿Œµ¶Ω∫
-		stats[randomIndex]++;
-		--remainingPoint;
-	}
+#ifdef _DEBUG
+	debug.Format(_T("Trend : %d\n"), randomTrend);
+	OutputDebugString(debug);
+	debug.Format(_T("Game : %d\n"), Player::instance.GetNextGame());
+	OutputDebugString(debug);
+	debug.Format(_T("Talk : %d\n"), Player::instance.GetNextTalk());
+	OutputDebugString(debug);	
+	debug.Format(_T("Mukbang : %d\n"), Player::instance.GetNextMukbang());
+	OutputDebugString(debug);	
+	debug.Format(_T("Beauty : %d\n"), Player::instance.GetNextBeauty());
+	OutputDebugString(debug);	
+	debug.Format(_T("Exercise : %d\n"), Player::instance.GetNextExercise());
+	OutputDebugString(debug);
 
-	Player::instance.game = stats[0];
-	Player::instance.talk = stats[1];
-	Player::instance.mukbang = stats[2];
-	Player::instance.beauty = stats[3];
-	Player::instance.exercise = stats[4];
+#endif
 }
