@@ -184,6 +184,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="CInformationDlg.h" />
+    <ClInclude Include="CLiveChat.h" />
     <ClInclude Include="CLiveChoiceDlg.h" />
     <ClInclude Include="CLiveDlg.h" />
     <ClInclude Include="CLiveResultDlg.h" />
@@ -191,6 +192,8 @@
     <ClInclude Include="CRandomChoiceDlg.h" />
     <ClInclude Include="CRandomResultDlg.h" />
     <ClInclude Include="CResultDlg.h" />
+    <ClInclude Include="CShopDlg.h" />
+    <ClInclude Include="CShopResultDlg.h" />
     <ClInclude Include="CStoryDlg.h" />
     <ClInclude Include="CTrendResultDlg.h" />
     <ClInclude Include="framework.h" />
@@ -204,6 +207,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CInformationDlg.cpp" />
+    <ClCompile Include="CLiveChat.cpp" />
     <ClCompile Include="CLiveChoiceDlg.cpp" />
     <ClCompile Include="CLiveDlg.cpp" />
     <ClCompile Include="CLiveResultDlg.cpp" />
@@ -211,6 +215,8 @@
     <ClCompile Include="CRandomChoiceDlg.cpp" />
     <ClCompile Include="CRandomResultDlg.cpp" />
     <ClCompile Include="CResultDlg.cpp" />
+    <ClCompile Include="CShopDlg.cpp" />
+    <ClCompile Include="CShopResultDlg.cpp" />
     <ClCompile Include="CStoryDlg.cpp" />
     <ClCompile Include="CTrendResultDlg.cpp" />
     <ClCompile Include="RandomEvent.cpp" />
@@ -232,6 +238,7 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\..\OneDrive\바탕 화면\KakaoTalk_20241129_230516186.bmp" />
+    <Image Include="res\button_start.bmp" />
     <Image Include="res\Influencer-maker.ico" />
     <Image Include="res\live_image (1).bmp" />
     <Image Include="res\live_image (2).bmp" />
@@ -240,6 +247,7 @@
     <Image Include="res\live_image (5).bmp" />
     <Image Include="res\logo.bmp" />
     <Image Include="res\logo_50.bmp" />
+    <Image Include="res\logo_new.bmp" />
     <Image Include="res\logo_resized.bmp" />
     <Image Include="res\main_icon (1).bmp" />
     <Image Include="res\main_icon (2).bmp" />

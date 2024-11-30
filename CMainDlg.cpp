@@ -7,6 +7,7 @@
 #include "CMainDlg.h"
 #include "CLiveChoiceDlg.h"
 #include "CTrendResultDlg.h"
+#include "CShopDlg.h"
 
 
 // CMainDlg 대화 상자
@@ -43,6 +44,7 @@ BEGIN_MESSAGE_MAP(CMainDlg, CDialogEx)
 	ON_WM_PAINT()
 	ON_WM_ERASEBKGND()
 	ON_WM_CTLCOLOR()
+	ON_BN_CLICKED(IDC_SHOP_BUTTON, &CMainDlg::OnBnClickedShopButton)
 END_MESSAGE_MAP()
 
 
@@ -76,6 +78,22 @@ void CMainDlg::OnClickedTrendButton()
 	pTrendResultDlg->SetWindowPos(NULL, parentRect.left, parentRect.top, currentRect.Width(), currentRect.Height(), SWP_SHOWWINDOW);
 
 	DestroyWindow();
+}
+
+
+void CMainDlg::OnBnClickedShopButton()
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	CShopDlg* pShopDlg = new CShopDlg();
+	pShopDlg->Create(IDD_SHOP_DIALOG);
+
+	CRect parentRect, currentRect;
+	GetWindowRect(&parentRect);
+	pShopDlg->GetWindowRect(&currentRect);
+	pShopDlg->SetWindowPos(NULL, parentRect.left, parentRect.top, currentRect.Width(), currentRect.Height(), SWP_SHOWWINDOW);
+
+	DestroyWindow();
+
 }
 
 
@@ -173,4 +191,5 @@ HBRUSH CMainDlg::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 	// TODO:  기본값이 적당하지 않으면 다른 브러시를 반환합니다.
 	return hbr;
 }
+
 
