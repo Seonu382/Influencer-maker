@@ -7,6 +7,8 @@
 #include "CLiveDlg.h"
 #include "CRandomChoiceDlg.h"
 #include "Player.h"
+#include "CLiveDlg.h"
+#include "CLiveChat.h"
 
 
 // CLiveDlg 대화 상자
@@ -26,6 +28,7 @@ CLiveDlg::~CLiveDlg()
 void CLiveDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
+	DDX_Control(pDX, IDC_LIVE_CHAT, m_cbLiveChat);
 }
 
 
@@ -45,6 +48,7 @@ BOOL CLiveDlg::OnInitDialog()
 
 	// TODO:  여기에 추가 초기화 작업을 추가합니다.
 	SetTimer(0, 3000, NULL);
+	SetTimer(3, 1000, NULL);
 
 	CStatic* p_lamp_image = (CStatic*)GetDlgItem(IDC_LIVE);
 	CBitmap lamp_image;
@@ -77,22 +81,47 @@ BOOL CLiveDlg::OnInitDialog()
 	if (h_old_bitmap != NULL) ::DeleteObject(h_old_bitmap);
 	lamp_image.Detach();
 
+	m_cbLiveChat.ResetContent();
+
+	
+	bool positive = true;
+	m_currentChatIndex = 0;
+	m_selectedChats = CLiveChat::GetRandomChats(positive, 6);
+	
+
 	return TRUE;  // return TRUE unless you set the focus to a control
 	// 예외: OCX 속성 페이지는 FALSE를 반환해야 합니다.
 }
 
 
+
 void CLiveDlg::OnTimer(UINT_PTR nIDEvent)
 {
 	// TODO: 여기에 메시지 처리기 코드를 추가 및/또는 기본값을 호출합니다.
+	
+
 	if (nIDEvent == 0) {
 		showRandomChoice(false);
+		KillTimer(0);
 	}
 	else if (nIDEvent == 1) {
 		showRandomChoice(true);
 		ShowWindow(SW_HIDE);
+		KillTimer(1);
 	}
-	KillTimer(nIDEvent);
+	else if (nIDEvent == 3) {
+		if (m_currentChatIndex < m_selectedChats.size()) {
+			CString chatStr(m_selectedChats[m_currentChatIndex].GetChat().c_str());
+			m_cbLiveChat.AddString(chatStr);
+
+			m_currentChatIndex++;
+		}
+		else {
+			KillTimer(3);
+		}
+	}
+
+
 
 
 	CDialogEx::OnTimer(nIDEvent);

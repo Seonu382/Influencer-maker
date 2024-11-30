@@ -184,6 +184,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="CInformationDlg.h" />
+    <ClInclude Include="CLiveChat.h" />
     <ClInclude Include="CLiveChoiceDlg.h" />
     <ClInclude Include="CLiveDlg.h" />
     <ClInclude Include="CLiveResultDlg.h" />
@@ -204,6 +205,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CInformationDlg.cpp" />
+    <ClCompile Include="CLiveChat.cpp" />
     <ClCompile Include="CLiveChoiceDlg.cpp" />
     <ClCompile Include="CLiveDlg.cpp" />
     <ClCompile Include="CLiveResultDlg.cpp" />
