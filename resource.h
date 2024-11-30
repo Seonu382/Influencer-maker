@@ -1,0 +1,71 @@
+﻿//{{NO_DEPENDENCIES}}
+// Microsoft Visual C++에서 생성한 포함 파일입니다.
+// Influencermaker.rc에서 사용되고 있습니다.
+//
+#define IDM_ABOUTBOX                    0x0010
+#define IDD_ABOUTBOX                    100
+#define IDS_ABOUTBOX                    101
+#define IDD_INFLUENCERMAKER_DIALOG      102
+#define IDR_MAINFRAME                   128
+#define IDD_INFORMATION_DIALOG          129
+#define IDD_MAIN_DIALOG                 134
+#define IDD_LIVECHOICE_DIALOG           136
+#define IDD_RANDOMCHOICE_DIALOG         138
+#define IDD_RESULT_DIALOG               140
+#define IDD_LIVERESULT_DIALOG           140
+#define IDD_STORY_DIALOG                142
+#define IDD_DIALOG1                     144
+#define IDD_LIVE_DIALOG                 144
+#define IDD_TRENDRESULT_DIALOG          146
+#define IDD_RANDOMRESULT_DIALOG         148
+#define IDC_START_BUTTON                1000
+#define IDC_NAME                        1002
+#define IDC_NAME_EDIT                   1003
+#define IDC_MALE_BUTTON                 1004
+#define IDC_FEMALE_BUTTON               1005
+#define IDC_FOLLOWER                    1010
+#define IDC_DAY                         1011
+#define IDC_MONEY                       1012
+#define IDC_HEALTH                      1013
+#define IDC_LIVE_BUTTON                 1014
+#define IDC_INVESTIGATE_BUTTON          1015
+#define IDC_TREND_BUTTON                1015
+#define IDC_SHOP_BUTTON                 1016
+#define IDC_REST_BUTTON                 1017
+#define IDC_BUTTON1                     1023
+#define IDC_YES_BUTTON                  1023
+#define IDC_NEXTDAY_BUTTON              1023
+#define IDC_BUTTON2                     1024
+#define IDC_NO_BUTTON                   1024
+#define IDC_NEXT_BUTTON                 1024
+#define IDC_BUTTON3                     1025
+#define IDC_MUKBANG_BUTTON              1025
+#define IDC_BUTTON4                     1026
+#define IDC_STATIC1                     1026
+#define IDC_BEAUTY_BUTTON               1026
+#define IDC_BUTTON5                     1027
+#define IDC_CONFIRM_BUTTON              1027
+#define IDC_EXERCISE_BUTTON             1027
+#define IDC_EDIT1                       1028
+#define IDC_SKIP_BUTTON                 1029
+#define IDC_GAME_BUTTON                 1031
+#define IDC_TALK_BUTTON                 1032
+#define IDC_RANDOMRESULT                1033
+#define IDC_RANDOMEVENT                 1034
+#define IDC_PREVIOUSFOLLOWER            1035
+#define IDC_CURRENTFOLLOWER             1036
+#define IDC_PREVIOUSMONEY               1037
+#define IDC_CURRENTMONEY                1038
+#define IDC_PREVIOUSHEALTH              1039
+#define IDC_CURRENTHEALTH               1040
+
+// Next default values for new objects
+// 
+#ifdef APSTUDIO_INVOKED
+#ifndef APSTUDIO_READONLY_SYMBOLS
+#define _APS_NEXT_RESOURCE_VALUE        150
+#define _APS_NEXT_COMMAND_VALUE         32771
+#define _APS_NEXT_CONTROL_VALUE         1041
+#define _APS_NEXT_SYMED_VALUE           101
+#endif
+#endif
