@@ -9,7 +9,7 @@ void Player::InitializePlayerStat() {
 	srand(static_cast<unsigned int>(time(NULL)));
 
 	CString debug;
-	int randomTrend = (rand() % 5) + 1;
+	Player::instance.SetTrend((rand() % 5) + 1);
 
 	Player::instance.SetGame(Player::instance.GetNextGame());
 	Player::instance.SetTalk(Player::instance.GetNextTalk());
@@ -18,7 +18,7 @@ void Player::InitializePlayerStat() {
 	Player::instance.SetExercise(Player::instance.GetNextExercise());
 
 	
-	switch (randomTrend) {
+	switch (Player::instance.GetTrend()) {
 	case GAME:
 		Player::instance.SetNextGame(170 + Player::instance.GetSkilledGame());
 		Player::instance.SetNextTalk((rand() % 5) * 10 + 70 + Player::instance.GetSkilledTalk());
@@ -61,7 +61,7 @@ void Player::InitializePlayerStat() {
 	}
 
 #ifdef _DEBUG
-	debug.Format(_T("Trend : %d\n"), randomTrend);
+	debug.Format(_T("Trend : %d\n"), Player::instance.GetTrend());
 	OutputDebugString(debug);
 	debug.Format(_T("Game : %d\n"), Player::instance.GetNextGame());
 	OutputDebugString(debug);

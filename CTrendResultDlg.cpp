@@ -26,6 +26,7 @@ CTrendResultDlg::~CTrendResultDlg()
 void CTrendResultDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
+	DDX_Control(pDX, IDC_TRENDRESULT, m_tTrendResult);
 }
 
 
@@ -97,4 +98,40 @@ HBRUSH CTrendResultDlg::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 
 	// TODO:  기본값이 적당하지 않으면 다른 브러시를 반환합니다.
 	return hbr;
+}
+
+
+BOOL CTrendResultDlg::OnInitDialog()
+{
+	CDialogEx::OnInitDialog();
+
+	// TODO:  여기에 추가 초기화 작업을 추가합니다.
+	switch (Player::instance.GetTrend())
+	{
+	case GAME:
+		m_tTrendResult.SetWindowTextW(_T("트렌드를 조사해본 결과, 내일은 재미있는 방송을 사람들이 좋아할 것 같아!"));
+		break;
+
+	case TALK:
+		m_tTrendResult.SetWindowTextW(_T("트렌드를 조사해본 결과, 내일은 조용히 힐링하는 느낌의 방송이 좋겠어!"));
+		break;
+
+	case MUKBANG:
+		m_tTrendResult.SetWindowTextW(_T("트렌드를 조사해본 결과, 최근에 출시된 맛있는 음식이 떠오르는거 같아!"));
+		break;
+
+	case BEAUTY:
+		m_tTrendResult.SetWindowTextW(_T("트렌드를 조사해본 결과, 요즘 나의 화장법에 궁금해하는 사람이 많아진거같아!"));
+		break;
+
+	case EXERCISE:
+		m_tTrendResult.SetWindowTextW(_T("트렌드를 조사해본 결과, 내일은 활동적으로 움직이는 방송이 필요할거같아!"));
+		break;
+
+	default:
+		break;
+	}
+
+	return TRUE;  // return TRUE unless you set the focus to a control
+	// 예외: OCX 속성 페이지는 FALSE를 반환해야 합니다.
 }
