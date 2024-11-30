@@ -102,7 +102,7 @@ void CStoryDlg::OnClickedSkipButton()
         CRect rt;
         GetClientRect(&rt);
 
-        // 비트맵의 원본 크기를 가져옵니다.
+        // 비트맵의 원본 크기를 가져옵니다.   
         BITMAP bmp;
         GetObject(hBit, sizeof(BITMAP), &bmp);
 

@@ -37,6 +37,8 @@
 #define IDB_STORY2                      169
 #define IDB_BITMAP1                     170
 #define IDB_MAIN_HIGH                   170
+#define IDR_WAVE1                       171
+#define IDR_BGM                         171
 #define IDC_START_BUTTON                1000
 #define IDC_NAME                        1002
 #define IDC_NAME_EDIT                   1003
@@ -86,7 +88,7 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        171
+#define _APS_NEXT_RESOURCE_VALUE        172
 #define _APS_NEXT_COMMAND_VALUE         32771
 #define _APS_NEXT_CONTROL_VALUE         1044
 #define _APS_NEXT_SYMED_VALUE           101
