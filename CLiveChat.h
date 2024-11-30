@@ -9,6 +9,7 @@ private:
     std::string chat;   
     bool positive;       
 
+
 public:
     CLiveChat() : chat(""), positive(false) {}
     CLiveChat(const std::string& chat, bool positive);

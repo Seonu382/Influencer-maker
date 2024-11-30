@@ -3,9 +3,13 @@
 
 std::vector<CLiveChat> CLiveChat::LiveChating = {
     CLiveChat("대유잼", true),
-    CLiveChat("폼미쳤디", true),
+    CLiveChat("폼미쳤다", true),
+    CLiveChat("ㅋㅋㅋㅋㅋㅋㅋㅋ", true),
+    CLiveChat("이거지예", true),
     CLiveChat("노잼", false),
-    CLiveChat("감다뒤", false)
+    CLiveChat("감다뒤", false),
+    CLiveChat("이건 좀...", false),
+    CLiveChat("분위기 파악 좀", false)
 };
 
 CLiveChat::CLiveChat(const std::string& chat, bool positive)

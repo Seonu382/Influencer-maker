@@ -1,7 +1,8 @@
 ﻿#pragma once
 #include "afxdialogex.h"
+#include <vector>
 
-
+class CLiveChat;
 // CLiveDlg 대화 상자
 
 class CLiveDlg : public CDialogEx
@@ -28,4 +29,7 @@ public:
 	afx_msg HBRUSH OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor);
 	afx_msg BOOL OnEraseBkgnd(CDC* pDC);
 	CListBox m_cbLiveChat;
+private:
+	int m_currentChatIndex;
+	std::vector<CLiveChat> m_selectedChats;
 };
