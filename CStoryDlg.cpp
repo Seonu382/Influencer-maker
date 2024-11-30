@@ -72,25 +72,15 @@ extern int count = 0;
 
 void CStoryDlg::OnClickedSkipButton()
 {
-	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
-	
-    auto updateBackgroundAndSize = [this](UINT bitmapID) {
-        HBITMAP hBit = LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(bitmapID));
-        if (hBit != NULL) {
-            m_StoryBKG.SetBitmap(hBit);
-            CRect rt;
-            GetClientRect(&rt);
-            m_StoryBKG.SetWindowPos(NULL, 0, 0, rt.Width(), rt.Height(), SWP_SHOWWINDOW);
-            DeleteObject(hBit);
-        }
-    };
+    // TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+    HBITMAP hBit = nullptr;
 
     if (count == 0) {
-        updateBackgroundAndSize(IDB_STORY2);
+        hBit = LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_STORY2));
         count++;
     }
     else if (count == 1) {
-        updateBackgroundAndSize(IDB_STORY3);
+        hBit = LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_STORY3));
         count++;
     }
     else if (count == 2) {
@@ -104,8 +94,35 @@ void CStoryDlg::OnClickedSkipButton()
 
         DestroyWindow();
         count = 0;
+        return;
+    }
+
+    if (hBit != nullptr) {
+        // 창 크기를 가져옵니다.
+        CRect rt;
+        GetClientRect(&rt);
+
+        // 비트맵의 원본 크기를 가져옵니다.
+        BITMAP bmp;
+        GetObject(hBit, sizeof(BITMAP), &bmp);
+
+        // 비트맵 크기를 조정합니다.
+        CImage img;
+        img.Attach(hBit);
+        CImage resizedImg;
+        resizedImg.Create(rt.Width(), rt.Height(), img.GetBPP());
+        HDC hResizedDC = resizedImg.GetDC();
+        img.StretchBlt(hResizedDC, 0, 0, rt.Width(), rt.Height(), 0, 0, bmp.bmWidth, bmp.bmHeight, SRCCOPY);
+        resizedImg.ReleaseDC();
+
+        // 조정된 이미지를 배경으로 설정합니다.
+        m_StoryBKG.SetBitmap((HBITMAP)resizedImg.Detach());
+
+        // 원본 비트맵 리소스 삭제
+        img.Detach();
     }
 }
+
 
 
 void CStoryDlg::OnPaint()
