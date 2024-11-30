@@ -93,22 +93,27 @@ BOOL CLiveResultDlg::OnInitDialog()
 
 	case GAME:
 		dFollower = Player::instance.GetGame();
+		Player::instance.SetGame(Player::instance.GetGame() + 1);
 		break;
 
 	case TALK:
 		dFollower = Player::instance.GetTalk();
+		Player::instance.SetTalk(Player::instance.GetTalk() + 1);
 		break;
 
 	case MUKBANG:
 		dFollower = Player::instance.GetMukbang();
+		Player::instance.SetMukbang(Player::instance.GetMukbang() + 1);
 		break;
 
 	case BEAUTY:
 		dFollower = Player::instance.GetBeauty();
+		Player::instance.SetBeauty(Player::instance.GetBeauty() + 1);
 		break;
 
 	case EXERCISE:
 		dFollower = Player::instance.GetExercise();
+		Player::instance.SetExercise(Player::instance.GetExercise() + 1);
 		break;
 
 	}
