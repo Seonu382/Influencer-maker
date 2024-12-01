@@ -191,6 +191,7 @@
     <ClInclude Include="CMainDlg.h" />
     <ClInclude Include="CRandomChoiceDlg.h" />
     <ClInclude Include="CRandomResultDlg.h" />
+    <ClInclude Include="CRestDlg.h" />
     <ClInclude Include="CResultDlg.h" />
     <ClInclude Include="CShopDlg.h" />
     <ClInclude Include="CShopResultDlg.h" />
@@ -214,6 +215,7 @@
     <ClCompile Include="CMainDlg.cpp" />
     <ClCompile Include="CRandomChoiceDlg.cpp" />
     <ClCompile Include="CRandomResultDlg.cpp" />
+    <ClCompile Include="CRestDlg.cpp" />
     <ClCompile Include="CResultDlg.cpp" />
     <ClCompile Include="CShopDlg.cpp" />
     <ClCompile Include="CShopResultDlg.cpp" />

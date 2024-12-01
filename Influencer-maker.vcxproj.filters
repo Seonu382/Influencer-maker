@@ -78,6 +78,9 @@
     <ClInclude Include="CLiveChat.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="CRestDlg.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Influencer-maker.cpp">
@@ -132,6 +135,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="CLiveChat.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CRestDlg.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
