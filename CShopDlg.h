@@ -23,6 +23,9 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	void showShopResultDlg();
+	void plusSkillDlg(int plus);
 	afx_msg void OnBnClickedShopHealth();
 	afx_msg void OnBnClickedShopCamera();
+	afx_msg void OnBnClickedShopComputer();
+	afx_msg void OnBnClickedShopEditor();
 };
