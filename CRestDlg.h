@@ -28,4 +28,5 @@ public:
 	CStatic m_tPreviousHealth;
 	virtual BOOL OnInitDialog();
 	afx_msg void OnBnClickedNextdayButton();
+	void showEnding(int endingId);
 };

@@ -170,9 +170,8 @@ BOOL CMainDlg::OnInitDialog()
 		lamp_image.LoadBitmap(IDB_MAIN_HIGH);
 	else
 	{
-
-	}
 		lamp_image.LoadBitmap(IDB_MAIN_LOW);
+	}
 
 	HBITMAP h_old_bitmap = p_lamp_image->SetBitmap(lamp_image);
 	if (h_old_bitmap != NULL) ::DeleteObject(h_old_bitmap);

@@ -80,9 +80,7 @@ void CLiveResultDlg::goNextDay()
 
 	Player::instance.AddDay();
 
-	showEnding(BADENDING_2);
-
-	/*
+	
 	if (Player::instance.GetDay() >= 50 && Player::instance.GetFollower() < 1'000'000) {
 		showEnding(BADENDING_1);
 	}
@@ -95,7 +93,6 @@ void CLiveResultDlg::goNextDay()
 	else {
 		showMainDlg();
 	}
-	*/
 }
 
 

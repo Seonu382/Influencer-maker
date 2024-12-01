@@ -30,4 +30,5 @@ public:
 	afx_msg HBRUSH OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor);
 	CStatic m_tTrendResult;
 	virtual BOOL OnInitDialog();
+	void showEnding(int endingId);
 };

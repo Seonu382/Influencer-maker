@@ -6,6 +6,7 @@
 #include "afxdialogex.h"
 #include "CTrendResultDlg.h"
 #include "CMainDlg.h"
+#include "CEndingDlg.h"
 #include "Player.h"
 
 
@@ -54,7 +55,19 @@ void CTrendResultDlg::goNextDay()
 	// TODO: 여기에 구현 코드 추가.
 
 	Player::instance.AddDay();
-	showMainDlg();
+
+	if (Player::instance.GetDay() >= 50 && Player::instance.GetFollower() < 1'000'000) {
+		showEnding(BADENDING_1);
+	}
+	else if (Player::instance.GetDay() >= 50 && Player::instance.GetFollower() >= 1'000'000) {
+		showEnding(HAPPYENDING);
+	}
+	else if (Player::instance.GetHealth() <= 0) {
+		showEnding(BADENDING_2);
+	}
+	else {
+		showMainDlg();
+	}
 }
 
 void CTrendResultDlg::showMainDlg() {
@@ -134,4 +147,22 @@ BOOL CTrendResultDlg::OnInitDialog()
 
 	return TRUE;  // return TRUE unless you set the focus to a control
 	// 예외: OCX 속성 페이지는 FALSE를 반환해야 합니다.
+}
+
+
+void CTrendResultDlg::showEnding(int endingId)
+{
+	// TODO: 여기에 구현 코드 추가.
+	CEndingDlg* pEndingDlg = new CEndingDlg();
+
+	pEndingDlg->m_EndingType = endingId;
+
+	pEndingDlg->Create(IDD_ENDING_DIALOG);
+
+	CRect parentRect, currentRect;
+	GetWindowRect(&parentRect);
+	pEndingDlg->GetWindowRect(&currentRect);
+	pEndingDlg->SetWindowPos(NULL, parentRect.left, parentRect.top, currentRect.Width(), currentRect.Height(), SWP_SHOWWINDOW);
+
+	DestroyWindow();
 }

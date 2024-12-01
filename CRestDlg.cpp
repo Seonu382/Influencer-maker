@@ -7,6 +7,7 @@
 #include "CRestDlg.h"
 #include "Player.h"
 #include "CMainDlg.h"
+#include "CEndingDlg.h"
 
 
 // CRestDlg 대화 상자
@@ -61,7 +62,18 @@ void CRestDlg::goNextDay()
 
 	Player::instance.AddDay();
 
-	showMainDlg();
+	if (Player::instance.GetDay() >= 50 && Player::instance.GetFollower() < 1'000'000) {
+		showEnding(BADENDING_1);
+	}
+	else if (Player::instance.GetDay() >= 50 && Player::instance.GetFollower() >= 1'000'000) {
+		showEnding(HAPPYENDING);
+	}
+	else if (Player::instance.GetHealth() <= 0) {
+		showEnding(BADENDING_2);
+	}
+	else {
+		showMainDlg();
+	}
 }
 
 
@@ -94,3 +106,21 @@ BOOL CRestDlg::OnInitDialog()
 }
 
 
+
+
+void CRestDlg::showEnding(int endingId)
+{
+	// TODO: 여기에 구현 코드 추가.
+	CEndingDlg* pEndingDlg = new CEndingDlg();
+
+	pEndingDlg->m_EndingType = endingId;
+
+	pEndingDlg->Create(IDD_ENDING_DIALOG);
+
+	CRect parentRect, currentRect;
+	GetWindowRect(&parentRect);
+	pEndingDlg->GetWindowRect(&currentRect);
+	pEndingDlg->SetWindowPos(NULL, parentRect.left, parentRect.top, currentRect.Width(), currentRect.Height(), SWP_SHOWWINDOW);
+
+	DestroyWindow();
+}

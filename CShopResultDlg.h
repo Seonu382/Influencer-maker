@@ -33,4 +33,5 @@ public:
 	CStatic m_tPreviousMoney;
 	CStatic m_tCurrentMoney;
 //	CStatic m_tBought;
+	void showEnding(int endingId);
 };
