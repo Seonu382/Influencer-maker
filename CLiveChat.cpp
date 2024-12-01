@@ -1,11 +1,17 @@
 #include "pch.h"
 #include "CLiveChat.h"
+#include "Player.h"
+
+std::string p1 = Player::instance.GetName() + std::string(CT2A(_T("님 오늘 폼미쳤다!!")));;
 
 std::vector<CLiveChat> CLiveChat::LiveChating = {
     CLiveChat("대유잼", true),
-    CLiveChat("폼미쳤다", true),
+    CLiveChat(p1, true),
     CLiveChat("ㅋㅋㅋㅋㅋㅋㅋㅋ", true),
+    CLiveChat("너무 웃겨요 ㅋㅋㅋㅋ 진짜 오늘 힐링하고 갑니다!", true),
+    CLiveChat("이런 컨텐츠 너무 좋아요~ 계속 해주세요!", true),
     CLiveChat("이거지예", true),
+    CLiveChat(Player::instance.GetName() + " 아 진짜 ㅋㅋㅋㅋ", true),
     CLiveChat("노잼", false),
     CLiveChat("감다뒤", false),
     CLiveChat("이건 좀...", false),

@@ -158,10 +158,10 @@ HBRUSH CLiveDlg::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 			pDC->SetTextColor(RGB(0, 0, 0)); // Yellow text
 
 			// Change background color
-			pDC->SetBkColor(RGB(253, 253, 253));
+			pDC->SetBkColor(RGB(200, 200, 200));
 
 			// Use a brush to set the background color
-			static CBrush brush(RGB(253, 253, 253));
+			static CBrush brush(RGB(200, 200, 200));
 			return (HBRUSH)brush.GetSafeHandle();
 		}
 	}
