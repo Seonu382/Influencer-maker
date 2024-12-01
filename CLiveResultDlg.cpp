@@ -121,6 +121,8 @@ BOOL CLiveResultDlg::OnInitDialog()
 	}
 
 	Player::instance.AddFollower(static_cast<int>(Player::instance.GetFollower() * dFollower / 1000.0f));
+	Player::instance.AddMoney(static_cast<int>(Player::instance.GetFollower() * 20.0f / 100));
+	Player::instance.AddHealth(-3);
 
 	CString previousFollower;
 	CString previousMoney;
