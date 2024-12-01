@@ -32,9 +32,6 @@
 #define IDB_MAIN_LOW                    164
 #define IDB_ICON_HEALTH                 165
 #define IDB_ICON_COIN                   166
-#define IDB_STORY1                      167
-#define IDB_STORY3                      168
-#define IDB_STORY2                      169
 #define IDB_BITMAP1                     170
 #define IDB_MAIN_HIGH                   170
 #define IDD_SHOP_DIALOG                 172
@@ -56,6 +53,11 @@
 #define IDB_BADENDING2_1                195
 #define IDB_BITMAP4                     196
 #define IDB_BADENDING2_2                196
+#define IDB_STORY_1                     197
+#define IDB_STORY_2                     198
+#define IDB_STORY_3                     199
+#define IDB_BITMAP7                     200
+#define IDB_STORY_4                     200
 #define IDC_START_BUTTON                1000
 #define IDC_NAME                        1002
 #define IDC_NAME_EDIT                   1003
@@ -120,7 +122,7 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        197
+#define _APS_NEXT_RESOURCE_VALUE        201
 #define _APS_NEXT_COMMAND_VALUE         32771
 #define _APS_NEXT_CONTROL_VALUE         1054
 #define _APS_NEXT_SYMED_VALUE           101
