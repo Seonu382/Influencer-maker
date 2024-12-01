@@ -114,7 +114,7 @@ void CLiveDlg::OnTimer(UINT_PTR nIDEvent)
 
 
 	if (nIDEvent == 0) {
-		if (rand() % 2 == 1)
+		if (rand() % 10 < 7)
 			showRandomChoice(false);
 		else
 			SetTimer(1, 3000, NULL);
@@ -122,7 +122,7 @@ void CLiveDlg::OnTimer(UINT_PTR nIDEvent)
 		KillTimer(0);
 	}
 	else if (nIDEvent == 1) {
-		if (rand() % 2 == 1) {
+		if (rand() % 10 < 7) {
 			showRandomChoice(true);
 			ShowWindow(SW_HIDE);
 			KillTimer(1);
