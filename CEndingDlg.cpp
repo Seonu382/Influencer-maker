@@ -86,11 +86,19 @@ void CEndingDlg::OnClickedSkipButton()
 			hBit = LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_BADENDING1_3));
 			m_nCount++;
 		}
+		else {
+			DestroyWindow();
+			m_nCount = 0;
+		}
 	}
 	else if (m_EndingType == BADENDING_2) {
 		if (m_nCount == 0) {
 			hBit = LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_BADENDING2_2));
 			m_nCount++;
+		}
+		else {
+			DestroyWindow();
+			m_nCount = 0;
 		}
 	}
 	else if (m_EndingType == HAPPYENDING) {
@@ -101,6 +109,10 @@ void CEndingDlg::OnClickedSkipButton()
 		else if (m_nCount == 1) {
 			hBit = LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_HAPPYENDING_3));
 			m_nCount++;
+		}
+		else {
+			DestroyWindow();
+			m_nCount = 0;
 		}
 	}
 
