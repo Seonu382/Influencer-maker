@@ -93,12 +93,12 @@ void CShopDlg::OnBnClickedShopHealth()
 		// 사용자가 "확인"을 클릭했을 때 처리
 
 		
-		if (Player::instance.GetMoney() < 1000) {
+		if (Player::instance.GetMoney() < 500) {
 			MessageBox(L"돈이 부족합니다.", L"", MB_OK | MB_ICONWARNING);
 		}
 		else {
 			Player::instance.AddHealth(10);
-			Player::instance.AddMoney(-1000);
+			Player::instance.AddMoney(-500);
 			showShopResultDlg();
 		}
 	}

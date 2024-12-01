@@ -267,7 +267,7 @@
     <Image Include="res\story (3).bmp" />
   </ItemGroup>
   <ItemGroup>
-    <Media Include="..\..\..\Downloads\never-again-108445.wav" />
+    <Media Include="res\bgm.wav" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

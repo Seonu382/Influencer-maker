@@ -6,6 +6,9 @@
 #include "framework.h"
 #include "Influencer-maker.h"
 #include "Influencer-makerDlg.h"
+#include <windows.h>
+#include <mmsystem.h>
+#pragma comment(lib, "winmm.lib")
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -71,6 +74,10 @@ BOOL CInfluencermakerApp::InitInstance()
 	// 적절한 내용으로 수정해야 합니다.
 	SetRegistryKey(_T("로컬 애플리케이션 마법사에서 생성된 애플리케이션"));
 
+
+	//BGM을 재생합니다
+	PlaySound(MAKEINTRESOURCE(IDR_WAVE1), AfxGetInstanceHandle(), SND_RESOURCE | SND_ASYNC | SND_LOOP);
+
 	CInfluencermakerDlg dlg;
 	m_pMainWnd = &dlg;
 	INT_PTR nResponse = dlg.DoModal();
@@ -90,8 +97,7 @@ BOOL CInfluencermakerApp::InitInstance()
 		TRACE(traceAppMsg, 0, "경고: 대화 상자에서 MFC 컨트롤을 사용하는 경우 #define _AFX_NO_MFC_CONTROLS_IN_DIALOGS를 수행할 수 없습니다.\n");
 	}
 
-	//BGM을 재생합니다
-
+	
 
 	// 위에서 만든 셸 관리자를 삭제합니다.
 	if (pShellManager != nullptr)
