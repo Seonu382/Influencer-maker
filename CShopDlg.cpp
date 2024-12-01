@@ -95,7 +95,7 @@ void CShopDlg::OnBnClickedShopHealth()
 		// 사용자가 "확인"을 클릭했을 때 처리
 
 		
-		if (Player::instance.GetMoney() < 00) {
+		if (Player::instance.GetMoney() < 500) {
 			MessageBox(L"돈이 부족합니다.", L"", MB_OK | MB_ICONWARNING);
 		}
 		else {
@@ -118,7 +118,7 @@ void CShopDlg::OnBnClickedShopCamera()
 	if (result == IDOK)
 	{
 		// 사용자가 "확인"을 클릭했을 때 처리
-		if (Player::instance.GetMoney() < 000) {
+		if (Player::instance.GetMoney() < 2000) {
 			MessageBox(L"돈이 부족합니다.", L"", MB_OK | MB_ICONWARNING);
 		}
 		else {
@@ -139,7 +139,7 @@ void CShopDlg::OnBnClickedShopComputer()
 	if (result == IDOK)
 	{
 		// 사용자가 "확인"을 클릭했을 때 처리
-		if (Player::instance.GetMoney() < 000) {
+		if (Player::instance.GetMoney() < 5000) {
 			MessageBox(L"돈이 부족합니다.", L"", MB_OK | MB_ICONWARNING);
 		}
 		else {
@@ -161,7 +161,7 @@ void CShopDlg::OnBnClickedShopEditor()
 	if (result == IDOK)
 	{
 		// 사용자가 "확인"을 클릭했을 때 처리
-		if (Player::instance.GetMoney() < 0000) {
+		if (Player::instance.GetMoney() < 20000) {
 			MessageBox(L"돈이 부족합니다.", L"", MB_OK | MB_ICONWARNING);
 		}
 		else {
