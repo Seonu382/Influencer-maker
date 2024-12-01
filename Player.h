@@ -44,7 +44,7 @@ private:
 	int skilledExercise;
 
 public:
-	Player() : name("¿µÈñ"), day(1), follower(100), money(100), health(100),
+	Player() : name("¿µÈñ"), day(1), follower(500000), money(100), health(100),
 		game(1), talk(1), mukbang(1), beauty(1), exercise(1),
 		skilledGame(0), skilledTalk(0), skilledMukbang(0), skilledBeauty(0), skilledExercise(0)
 	{}

@@ -145,7 +145,7 @@ BOOL CMainDlg::OnInitDialog()
 	CStatic* p_lamp_image = (CStatic*)GetDlgItem(IDC_MAIN);
 	CBitmap lamp_image;
 
-	if (Player::instance.GetFollower() >= 500000)
+	if (Player::instance.GetFollower() >= 100000)
 		lamp_image.LoadBitmap(IDB_MAIN_HIGH);
 	else
 		lamp_image.LoadBitmap(IDB_MAIN_LOW);
