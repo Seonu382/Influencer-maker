@@ -67,13 +67,11 @@
 #define IDC_SHOP_CAMERA                 1024
 #define IDC_BUTTON3                     1025
 #define IDC_MUKBANG_BUTTON              1025
-#define IDC_SHOP_COMPUTER               1025
 #define IDC_BUTTON4                     1026
 #define IDC_STATIC1                     1026
 #define IDC_BEAUTY_BUTTON               1026
 #define IDC_LIVE                        1026
 #define IDC_START_PIC                   1026
-#define IDC_SHOP_EDITOR                 1026
 #define IDC_BUTTON5                     1027
 #define IDC_CONFIRM_BUTTON              1027
 #define IDC_EXERCISE_BUTTON             1027
