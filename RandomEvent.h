@@ -2,6 +2,8 @@
 #include <string>
 #include <vector>
 
+#include "Player.h"
+
 class RandomEvent {
 private:
 	std::string eventDescription;
@@ -10,7 +12,7 @@ private:
 
 	std::string yesButton;
 	std::string noButton;
-
+	
 	int eventType;
 	int probability;
 
@@ -23,10 +25,11 @@ private:
 	int noHealth;
 
 	static std::vector<RandomEvent> liveRandomEvents;
+	static std::vector<RandomEvent> afterRandomEvents;
 
 public:
 	RandomEvent() {}
-	RandomEvent(std::string _eventDescription, std::string _yesDescription, std::string _noDescription, 
+	RandomEvent(std::string _eventDescription, std::string _yesDescription, std::string _noDescription,
 		std::string _yesButton, std::string _noButton,
 		int _eventType, int _probability,
 		int _yesFollower, int _yesMoney, int _yesHealth,
@@ -44,6 +47,7 @@ public:
 	std::string GetYesButton() const { return yesButton; }
 	std::string GetNoButton() const { return noButton; }
 
+	int GetEventType() const { return eventType; }
 	int GetProbability() const { return probability; }
 
 	int GetYesFollower() const { return yesFollower; }
@@ -57,4 +61,5 @@ public:
 	static void InitializeDatabase();
 
 	static RandomEvent GetLiveRandomEvent();
+	static RandomEvent GetAfterRandomEvent();
 };

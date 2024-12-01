@@ -140,9 +140,9 @@ void CLiveDlg::showRandomChoice(bool _afterLive)
 {
 	// TODO: 여기에 구현 코드 추가.
 	CRandomChoiceDlg* pRandomChoiceDlg = new CRandomChoiceDlg();
-	pRandomChoiceDlg->Create(IDD_RANDOMCHOICE_DIALOG);
 	pRandomChoiceDlg->m_bAfterLive = _afterLive;
 	pRandomChoiceDlg->setParentDialog(this);
+	pRandomChoiceDlg->Create(IDD_RANDOMCHOICE_DIALOG);
 
 	CRect parentRect, currentRect;
 	GetWindowRect(&parentRect);
