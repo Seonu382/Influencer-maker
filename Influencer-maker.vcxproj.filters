@@ -221,6 +221,9 @@
     <Image Include="res\main_icon (3).bmp">
       <Filter>리소스 파일</Filter>
     </Image>
+    <Image Include="res\main_image (3).bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Media Include="..\..\..\Downloads\never-again-108445.wav">
