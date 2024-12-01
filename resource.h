@@ -82,6 +82,8 @@
 #define IDC_EXERCISE_BUTTON             1027
 #define IDC_SHOP_BACK                   1027
 #define IDC_EDIT1                       1028
+#define IDC_SHOP_BACK2                  1028
+#define IDC_LIVE_BACK                   1028
 #define IDC_SKIP_BUTTON                 1029
 #define IDC_GAME_BUTTON                 1031
 #define IDC_TALK_BUTTON                 1032

@@ -28,4 +28,7 @@ public:
 	afx_msg void OnClickedMukbangButton();
 	afx_msg void OnClickedBeautyButton();
 	afx_msg void OnClickedExerciseButton();
+	afx_msg void OnBnClickedLiveBack();
+	afx_msg BOOL OnEraseBkgnd(CDC* pDC);
+	afx_msg HBRUSH OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor);
 };

@@ -37,6 +37,8 @@ BEGIN_MESSAGE_MAP(CShopDlg, CDialogEx)
 	ON_BN_CLICKED(IDC_SHOP_COMPUTER, &CShopDlg::OnBnClickedShopComputer)
 	ON_BN_CLICKED(IDC_SHOP_EDITOR, &CShopDlg::OnBnClickedShopEditor)
 	ON_BN_CLICKED(IDC_SHOP_BACK, &CShopDlg::OnBnClickedShopBack)
+	ON_WM_ERASEBKGND()
+	ON_WM_CTLCOLOR()
 END_MESSAGE_MAP()
 
 
@@ -93,13 +95,15 @@ void CShopDlg::OnBnClickedShopHealth()
 		// 사용자가 "확인"을 클릭했을 때 처리
 
 		
-		if (Player::instance.GetMoney() < 500) {
+		if (Player::instance.GetMoney() < 00) {
 			MessageBox(L"돈이 부족합니다.", L"", MB_OK | MB_ICONWARNING);
 		}
 		else {
 			Player::instance.AddHealth(10);
 			Player::instance.AddMoney(-500);
+			Player::instance.SetShopItem(HEALTH, TRUE);
 			showShopResultDlg();
+			Player::instance.SetShopItem(HEALTH, FALSE);
 		}
 	}
 }
@@ -135,7 +139,7 @@ void CShopDlg::OnBnClickedShopComputer()
 	if (result == IDOK)
 	{
 		// 사용자가 "확인"을 클릭했을 때 처리
-		if (Player::instance.GetMoney() < 0) {
+		if (Player::instance.GetMoney() < 000) {
 			MessageBox(L"돈이 부족합니다.", L"", MB_OK | MB_ICONWARNING);
 		}
 		else {
@@ -182,4 +186,37 @@ void CShopDlg::OnBnClickedShopBack()
 	pMainDlg->SetWindowPos(NULL, parentRect.left, parentRect.top, currentRect.Width(), currentRect.Height(), SWP_SHOWWINDOW);
 
 	DestroyWindow();
+}
+
+
+
+BOOL CShopDlg::OnEraseBkgnd(CDC* pDC)
+{
+	// TODO: 여기에 메시지 처리기 코드를 추가 및/또는 기본값을 호출합니다.
+
+	CRect rect;
+	GetClientRect(rect);
+
+	pDC->FillSolidRect(rect, RGB(253, 253, 253));
+	return TRUE;
+
+
+	return CDialogEx::OnEraseBkgnd(pDC);
+}
+
+
+HBRUSH CShopDlg::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
+{
+	HBRUSH hbr = CDialogEx::OnCtlColor(pDC, pWnd, nCtlColor);
+
+	// TODO:  여기서 DC의 특성을 변경합니다.
+	if (nCtlColor == CTLCOLOR_STATIC)
+	{
+		pDC->SetBkColor(RGB(253, 253, 253));
+		hbr = ::CreateSolidBrush(RGB(253, 253, 253));
+	}
+
+	// TODO:  기본값이 적당하지 않으면 다른 브러시를 반환합니다.
+	return hbr;
+
 }

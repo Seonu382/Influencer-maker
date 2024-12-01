@@ -20,6 +20,7 @@
 #define CAMERA 0
 #define COMPUTER 1
 #define EDITOR 2
+#define HEALTH 3
 
 class Player {
 private:
@@ -50,7 +51,7 @@ private:
 	int nextBeauty;
 	int nextExercise;
 
-	bool shopItem[3];
+	bool shopItem[4];
 
 	int skilledGame;
 	int skilledTalk;
@@ -174,6 +175,9 @@ public:
 
 	void SetMainEvent(int id, int _status) { mainEvent[id] = _status; }
 	int GetMainEvent(int id) const { return mainEvent[id]; }
+
+
+
 
 	void SetShopItem(int id, bool _bool) { shopItem[id] = _bool; }
 	bool GetShopItem(int id) const { return shopItem[id]; }

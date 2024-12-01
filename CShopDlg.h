@@ -32,4 +32,6 @@ public:
 
 	virtual BOOL OnInitDialog();
 	afx_msg void OnBnClickedShopBack();
+	afx_msg BOOL OnEraseBkgnd(CDC* pDC);
+	afx_msg HBRUSH OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor);
 };

@@ -28,4 +28,6 @@ public:
 	CStatic m_tPreviousHealth;
 	virtual BOOL OnInitDialog();
 	afx_msg void OnBnClickedNextdayButton();
+	afx_msg BOOL OnEraseBkgnd(CDC* pDC);
+	afx_msg HBRUSH OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor);
 };
