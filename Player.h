@@ -112,12 +112,6 @@ public:
 	int GetNextBeauty() const { return nextBeauty; }
 	int GetNextExercise() const { return nextExercise; }
 
-	void SetSkilledGame(const int& _skilledGame) { skilledGame = _skilledGame; }
-	void SetSkilledTalk(const int& _skilledTalk) { skilledTalk = _skilledTalk; }
-	void SetSkilledMukbang(const int& _skilledMukbang) { skilledMukbang = _skilledMukbang; }
-	void SetSkilledBeauty(const int& _skilledBeauty) { skilledBeauty = _skilledBeauty; }
-	void SetSkilledExercise(const int& _skilledExercise) { skilledExercise = _skilledExercise; }
-
 	void SkilledGame() { skilledGame += 2; }
 	void SkilledTalk() { skilledTalk += 2; }
 	void SkilledMukbang() { skilledMukbang += 2; }
