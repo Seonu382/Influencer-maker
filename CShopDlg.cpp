@@ -74,9 +74,9 @@ BOOL CShopDlg::OnInitDialog()
 	if (Player::instance.GetShopItem(CAMERA))
 		GetDlgItem(IDC_SHOP_CAMERA)->EnableWindow(false);
 	if (Player::instance.GetShopItem(COMPUTER))
-		GetDlgItem(IDC_SHOP_CAMERA)->EnableWindow(false);
+		GetDlgItem(IDC_SHOP_COMPUTER)->EnableWindow(false);
 	if (Player::instance.GetShopItem(EDITOR))
-		GetDlgItem(IDC_SHOP_CAMERA)->EnableWindow(false);
+		GetDlgItem(IDC_SHOP_EDITOR)->EnableWindow(false);
 
 	return TRUE;  // return TRUE unless you set the focus to a control
 	// 예외: OCX 속성 페이지는 FALSE를 반환해야 합니다.
@@ -114,12 +114,12 @@ void CShopDlg::OnBnClickedShopCamera()
 	if (result == IDOK)
 	{
 		// 사용자가 "확인"을 클릭했을 때 처리
-		if (Player::instance.GetMoney() < 10000) {
+		if (Player::instance.GetMoney() < 000) {
 			MessageBox(L"돈이 부족합니다.", L"", MB_OK | MB_ICONWARNING);
 		}
 		else {
 			plusSkillDlg(10);
-			Player::instance.AddMoney(-10000);
+			Player::instance.AddMoney(-2000);
 			Player::instance.SetShopItem(CAMERA, TRUE);
 			showShopResultDlg();
 		}
@@ -135,12 +135,12 @@ void CShopDlg::OnBnClickedShopComputer()
 	if (result == IDOK)
 	{
 		// 사용자가 "확인"을 클릭했을 때 처리
-		if (Player::instance.GetMoney() < 50000) {
+		if (Player::instance.GetMoney() < 0) {
 			MessageBox(L"돈이 부족합니다.", L"", MB_OK | MB_ICONWARNING);
 		}
 		else {
 			plusSkillDlg(20);
-			Player::instance.AddMoney(-50000);
+			Player::instance.AddMoney(-5000);
 			Player::instance.SetShopItem(COMPUTER, TRUE);
 			showShopResultDlg();
 		}
@@ -157,12 +157,12 @@ void CShopDlg::OnBnClickedShopEditor()
 	if (result == IDOK)
 	{
 		// 사용자가 "확인"을 클릭했을 때 처리
-		if (Player::instance.GetMoney() < 100000) {
+		if (Player::instance.GetMoney() < 0000) {
 			MessageBox(L"돈이 부족합니다.", L"", MB_OK | MB_ICONWARNING);
 		}
 		else {
 			plusSkillDlg(30);
-			Player::instance.AddMoney(-100000);
+			Player::instance.AddMoney(-20000);
 			Player::instance.SetShopItem(EDITOR, TRUE);
 			showShopResultDlg();
 		}
