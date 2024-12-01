@@ -49,8 +49,13 @@
 #define IDD_ENDING_DIALOG               187
 #define IDB_BADENDING1_1                189
 #define IDB_BADENDING1_2                190
-#define IDB_BITMAP5                     191
 #define IDB_BADENDING1_3                191
+#define IDB_HAPPYENDING_1               192
+#define IDB_HAPPYENDING_2               193
+#define IDB_HAPPYENDING_3               194
+#define IDB_BADENDING2_1                195
+#define IDB_BITMAP4                     196
+#define IDB_BADENDING2_2                196
 #define IDC_START_BUTTON                1000
 #define IDC_NAME                        1002
 #define IDC_NAME_EDIT                   1003
@@ -113,7 +118,7 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        192
+#define _APS_NEXT_RESOURCE_VALUE        197
 #define _APS_NEXT_COMMAND_VALUE         32771
 #define _APS_NEXT_CONTROL_VALUE         1054
 #define _APS_NEXT_SYMED_VALUE           101

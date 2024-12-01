@@ -50,8 +50,10 @@ BOOL CEndingDlg::OnInitDialog()
 		hBit = LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_BADENDING1_1));
 		break;
 	case BADENDING_2:
+		hBit = LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_BADENDING2_1));
 		break;
 	case HAPPYENDING:
+		hBit = LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_HAPPYENDING_1));
 		break;
 
 	default:
@@ -82,6 +84,22 @@ void CEndingDlg::OnClickedSkipButton()
 		}
 		else if (m_nCount == 1) {
 			hBit = LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_BADENDING1_3));
+			m_nCount++;
+		}
+	}
+	else if (m_EndingType == BADENDING_2) {
+		if (m_nCount == 0) {
+			hBit = LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_BADENDING2_2));
+			m_nCount++;
+		}
+	}
+	else if (m_EndingType == HAPPYENDING) {
+		if (m_nCount == 0) {
+			hBit = LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_HAPPYENDING_2));
+			m_nCount++;
+		}
+		else if (m_nCount == 1) {
+			hBit = LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_HAPPYENDING_3));
 			m_nCount++;
 		}
 	}

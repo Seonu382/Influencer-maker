@@ -245,7 +245,12 @@
     <Image Include="res\BadEnding1-1.bmp" />
     <Image Include="res\BadEnding1-2.bmp" />
     <Image Include="res\BadEnding1-3.bmp" />
+    <Image Include="res\BadEnding2_1.bmp" />
+    <Image Include="res\BadEnding2_2.bmp" />
     <Image Include="res\button_start.bmp" />
+    <Image Include="res\HappyEnding_1.bmp" />
+    <Image Include="res\HappyEnding_2.bmp" />
+    <Image Include="res\HappyEnding_3.bmp" />
     <Image Include="res\Influencer-maker.ico" />
     <Image Include="res\live_image (1).bmp" />
     <Image Include="res\live_image (2).bmp" />
