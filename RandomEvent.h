@@ -8,6 +8,9 @@ private:
 	std::string yesDescription;
 	std::string noDescription;
 
+	std::string yesButton;
+	std::string noButton;
+
 	int eventType;
 	int probability;
 
@@ -23,16 +26,23 @@ private:
 
 public:
 	RandomEvent() {}
-	RandomEvent(std::string _eventDescription, std::string _yesDescription, std::string _noDescription, int _eventType, int _probability,
+	RandomEvent(std::string _eventDescription, std::string _yesDescription, std::string _noDescription, 
+		std::string _yesButton, std::string _noButton,
+		int _eventType, int _probability,
 		int _yesFollower, int _yesMoney, int _yesHealth,
 		int _noFollower, int _noMoney, int _noHealth)
-		: eventDescription(_eventDescription), yesDescription(_yesDescription), noDescription(_noDescription), eventType(_eventType), probability(_probability),
+		: eventDescription(_eventDescription), yesDescription(_yesDescription), noDescription(_noDescription), 
+		yesButton(_yesButton), noButton(_noButton),
+		eventType(_eventType), probability(_probability),
 		yesFollower(_yesFollower), yesMoney(_yesMoney), yesHealth(_yesHealth),
 		noFollower(_noFollower), noMoney(_noMoney), noHealth(_noHealth) {}
 
 	std::string GetEventDescription() const { return eventDescription; }
 	std::string GetYesDescription() const { return yesDescription; }
 	std::string GetNoDescription() const { return noDescription; }
+
+	std::string GetYesButton() const { return yesButton; }
+	std::string GetNoButton() const { return noButton; }
 
 	int GetProbability() const { return probability; }
 

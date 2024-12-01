@@ -28,6 +28,8 @@ void CRandomChoiceDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
 	DDX_Control(pDX, IDC_RANDOMEVENT, m_tRandomEvent);
+	DDX_Control(pDX, IDC_YES_BUTTON, m_btnYesButton);
+	DDX_Control(pDX, IDC_NO_BUTTON, m_btnNoButton);
 }
 
 
@@ -87,7 +89,10 @@ BOOL CRandomChoiceDlg::OnInitDialog()
 	// TODO:  여기에 추가 초기화 작업을 추가합니다.
 	m_liveRandomEvent = RandomEvent::GetLiveRandomEvent();
 	
+	m_btnYesButton.SetWindowTextW(CA2T(m_liveRandomEvent.GetYesButton().c_str()));
+	m_btnNoButton.SetWindowTextW(CA2T(m_liveRandomEvent.GetNoButton().c_str()));
 	m_tRandomEvent.SetWindowTextW(CA2T(m_liveRandomEvent.GetEventDescription().c_str()));
+
 
 	return TRUE;  // return TRUE unless you set the focus to a control
 	// 예외: OCX 속성 페이지는 FALSE를 반환해야 합니다.
