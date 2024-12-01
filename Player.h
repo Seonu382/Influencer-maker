@@ -105,9 +105,10 @@ public:
 	void SetHealth(const int& _health) { health = _health; }
 	int GetHealth() const { return health; }
 	void AddHealth(int _add) {
-		if (health + _add >= 0) {
+		if (health + _add >= 0 && health + _add <= 100) {
 			health += _add;
 		}
+		else if (health + _add > 100) health = 100;
 		else health = 0;
 	}
 
