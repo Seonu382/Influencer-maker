@@ -150,6 +150,9 @@ BOOL CMainDlg::OnInitDialog()
 	else if (Player::instance.GetFollower() >= 100000)
 		lamp_image.LoadBitmap(IDB_MAIN_HIGH);
 	else
+	{
+
+	}
 		lamp_image.LoadBitmap(IDB_MAIN_LOW);
 
 	HBITMAP h_old_bitmap = p_lamp_image->SetBitmap(lamp_image);
