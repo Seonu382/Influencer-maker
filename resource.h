@@ -44,6 +44,7 @@
 #define IDB_START                       177
 #define IDB_ICON_FOLLOWER               179
 #define IDB_MAIN_HYPER                  181
+#define IDD_REST_DIALOG                 182
 #define IDC_START_BUTTON                1000
 #define IDC_NAME                        1002
 #define IDC_NAME_EDIT                   1003
@@ -100,13 +101,12 @@
 #define IDC_PREVIOUS_HEALTH             1049
 #define IDC_CURRENT_HEALTH              1050
 #define IDC_BOUGHT                      1051
-#define IDC_LIST1                       1051
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        182
+#define _APS_NEXT_RESOURCE_VALUE        184
 #define _APS_NEXT_COMMAND_VALUE         32771
 #define _APS_NEXT_CONTROL_VALUE         1052
 #define _APS_NEXT_SYMED_VALUE           101
