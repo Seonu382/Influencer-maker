@@ -6,6 +6,7 @@
 #include "afxdialogex.h"
 #include "CLiveResultDlg.h"
 #include "CMainDlg.h"
+#include "CEndingDlg.h"
 #include "Player.h"
 
 
@@ -79,7 +80,22 @@ void CLiveResultDlg::goNextDay()
 
 	Player::instance.AddDay();
 
-	showMainDlg();
+	showEnding(BADENDING_1);
+
+	/*
+	if (Player::instance.GetDay() >= 50 && Player::instance.GetFollower() < 1'000'000) {
+		showEnding(BADENDING_1);
+	}
+	else if (Player::instance.GetDay() >= 50 && Player::instance.GetFollower() >= 1'000'000) {
+		showEnding(HAPPYENDING);
+	}
+	else if (Player::instance.GetHealth() <= 0) {
+		showEnding(BADENDING_2);
+	}
+	else {
+		showMainDlg();
+	}
+	*/
 }
 
 
@@ -177,4 +193,23 @@ HBRUSH CLiveResultDlg::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 
 	// TODO:  기본값이 적당하지 않으면 다른 브러시를 반환합니다.
 	return hbr;
+}
+
+
+void CLiveResultDlg::showEnding(int endingId)
+{
+	// TODO: 여기에 구현 코드 추가.
+	CEndingDlg* pEndingDlg = new CEndingDlg();
+
+	pEndingDlg->m_EndingType = endingId;
+
+	pEndingDlg->Create(IDD_ENDING_DIALOG);
+
+	CRect parentRect, currentRect;
+	GetWindowRect(&parentRect);
+	pEndingDlg->GetWindowRect(&currentRect);
+	pEndingDlg->SetWindowPos(NULL, parentRect.left, parentRect.top, currentRect.Width(), currentRect.Height(), SWP_SHOWWINDOW);
+
+	DestroyWindow();
+
 }

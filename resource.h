@@ -46,11 +46,11 @@
 #define IDB_MAIN_HYPER                  181
 #define IDD_REST_DIALOG                 182
 #define IDR_WAVE1                       184
-#define IDD_DIALOG2                     187
 #define IDD_ENDING_DIALOG               187
-#define IDB_BITMAP3                     189
-#define IDB_BITMAP4                     190
+#define IDB_BADENDING1_1                189
+#define IDB_BADENDING1_2                190
 #define IDB_BITMAP5                     191
+#define IDB_BADENDING1_3                191
 #define IDC_START_BUTTON                1000
 #define IDC_NAME                        1002
 #define IDC_NAME_EDIT                   1003
