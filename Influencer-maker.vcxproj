@@ -275,6 +275,10 @@
     <Image Include="res\story (1).bmp" />
     <Image Include="res\story (2).bmp" />
     <Image Include="res\story (3).bmp" />
+    <Image Include="res\Story_1.bmp" />
+    <Image Include="res\Story_2.bmp" />
+    <Image Include="res\Story_3.bmp" />
+    <Image Include="res\Story_4.bmp" />
   </ItemGroup>
   <ItemGroup>
     <Media Include="res\bgm.wav" />

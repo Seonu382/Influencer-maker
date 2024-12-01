@@ -60,7 +60,7 @@ BOOL CStoryDlg::OnInitDialog()
 	SetLayeredWindowAttributes(0, 0, LWA_ALPHA);
 
     // 배경 이미지
-	HBITMAP hBit = LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_STORY1));
+	HBITMAP hBit = LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_STORY_1));
 	m_StoryBKG.SetBitmap(hBit);
 	CRect rt;
 	GetClientRect(&rt);
@@ -79,14 +79,18 @@ void CStoryDlg::OnClickedSkipButton()
     HBITMAP hBit = nullptr;
 
     if (count == 0) {
-        hBit = LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_STORY2));
+        hBit = LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_STORY_2));
         count++;
     }
     else if (count == 1) {
-        hBit = LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_STORY3));
+        hBit = LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_STORY_3));
         count++;
     }
     else if (count == 2) {
+        hBit = LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_STORY_4));
+        count++;
+    }
+    else if (count == 3) {
         CMainDlg* pMainDlg = new CMainDlg();
         pMainDlg->Create(IDD_MAIN_DIALOG);
 
