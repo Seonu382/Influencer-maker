@@ -53,10 +53,13 @@ BOOL CStoryDlg::OnInitDialog()
 	CDialogEx::OnInitDialog();
 
 	// TODO:  여기에 추가 초기화 작업을 추가합니다.
+
+    // 투명도 조절
 	ModifyStyleEx(0, WS_EX_LAYERED);
 
 	SetLayeredWindowAttributes(0, 0, LWA_ALPHA);
 
+    // 배경 이미지
 	HBITMAP hBit = LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_STORY1));
 	m_StoryBKG.SetBitmap(hBit);
 	CRect rt;

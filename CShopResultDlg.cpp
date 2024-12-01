@@ -7,6 +7,7 @@
 #include "CShopResultDlg.h"
 #include "Player.h"
 #include "CMainDlg.h"
+#include "CEndingDlg.h"
 
 bool camera = 0;
 bool computer = 0;
@@ -73,7 +74,18 @@ void CShopResultDlg::goNextDay()
 
 	Player::instance.AddDay();
 
-	showMainDlg();
+	if (Player::instance.GetDay() >= 50 && Player::instance.GetFollower() < 1'000'000) {
+		showEnding(BADENDING_1);
+	}
+	else if (Player::instance.GetDay() >= 50 && Player::instance.GetFollower() >= 1'000'000) {
+		showEnding(HAPPYENDING);
+	}
+	else if (Player::instance.GetHealth() <= 0) {
+		showEnding(BADENDING_2);
+	}
+	else {
+		showMainDlg();
+	}
 }
 
 
@@ -129,8 +141,23 @@ BOOL CShopResultDlg::OnInitDialog()
 	return TRUE;  // return TRUE unless you set the focus to a control
 	// 예외: OCX 속성 페이지는 FALSE를 반환해야 합니다.
 }
+void CShopResultDlg::showEnding(int endingId)
+{
+	// TODO: 여기에 구현 코드 추가.
+	CEndingDlg* pEndingDlg = new CEndingDlg();
 
+	pEndingDlg->m_EndingType = endingId;
 
+	pEndingDlg->Create(IDD_ENDING_DIALOG);
+
+	CRect parentRect, currentRect;
+	GetWindowRect(&parentRect);
+	pEndingDlg->GetWindowRect(&currentRect);
+	pEndingDlg->SetWindowPos(NULL, parentRect.left, parentRect.top, currentRect.Width(), currentRect.Height(), SWP_SHOWWINDOW);
+
+	DestroyWindow();
+
+}
 BOOL CShopResultDlg::OnEraseBkgnd(CDC* pDC)
 {
 	CRect rect;
@@ -159,3 +186,4 @@ HBRUSH CShopResultDlg::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 	return hbr;
 
 }
+

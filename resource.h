@@ -46,6 +46,16 @@
 #define IDB_MAIN_HYPER                  181
 #define IDD_REST_DIALOG                 182
 #define IDR_WAVE1                       184
+#define IDD_ENDING_DIALOG               187
+#define IDB_BADENDING1_1                189
+#define IDB_BADENDING1_2                190
+#define IDB_BADENDING1_3                191
+#define IDB_HAPPYENDING_1               192
+#define IDB_HAPPYENDING_2               193
+#define IDB_HAPPYENDING_3               194
+#define IDB_BADENDING2_1                195
+#define IDB_BITMAP4                     196
+#define IDB_BADENDING2_2                196
 #define IDC_START_BUTTON                1000
 #define IDC_NAME                        1002
 #define IDC_NAME_EDIT                   1003
@@ -104,14 +114,15 @@
 #define IDC_PREVIOUS_HEALTH             1049
 #define IDC_CURRENT_HEALTH              1050
 #define IDC_BOUGHT                      1051
+#define IDC_ENDING_BKG                  1053
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        185
+#define _APS_NEXT_RESOURCE_VALUE        197
 #define _APS_NEXT_COMMAND_VALUE         32771
-#define _APS_NEXT_CONTROL_VALUE         1052
+#define _APS_NEXT_CONTROL_VALUE         1054
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif

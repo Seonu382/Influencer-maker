@@ -33,6 +33,7 @@ public:
 	CStatic m_tPreviousMoney;
 	CStatic m_tCurrentMoney;
 //	CStatic m_tBought;
+	void showEnding(int endingId);
 	afx_msg BOOL OnEraseBkgnd(CDC* pDC);
 	afx_msg HBRUSH OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor);
 	CStatic m_tBought;
