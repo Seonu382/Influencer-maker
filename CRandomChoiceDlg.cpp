@@ -45,6 +45,20 @@ END_MESSAGE_MAP()
 void CRandomChoiceDlg::OnClickedYesButton()
 {
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	switch (m_liveRandomEvent.GetEventType())
+	{
+	case GWANGGO:
+		Player::instance.SetMainEvent(GWANGGO, ACCEPT);
+		break;
+	case HABBANG:
+		Player::instance.SetMainEvent(HABBANG, ACCEPT);
+		break;
+	case SACHE:
+		Player::instance.SetMainEvent(SACHE, ACCEPT);
+		break;
+	default:
+		break;
+	}
 	showRandomResultDlg(true);
 }
 
@@ -52,6 +66,20 @@ void CRandomChoiceDlg::OnClickedYesButton()
 void CRandomChoiceDlg::OnClickedNoButton()
 {
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	switch (m_liveRandomEvent.GetEventType())
+	{
+	case GWANGGO:
+		Player::instance.SetMainEvent(GWANGGO, DENY);
+		break;
+	case HABBANG:
+		Player::instance.SetMainEvent(HABBANG, DENY);
+		break;
+	case SACHE:
+		Player::instance.SetMainEvent(SACHE, ACCEPT);
+		break;
+	default:
+		break;
+	}
 	showRandomResultDlg(false);
 }
 
@@ -70,7 +98,7 @@ void CRandomChoiceDlg::showRandomResultDlg(bool _Choice)
 	pRandomResultDlg->GetWindowRect(&currentRect);
 	pRandomResultDlg->SetWindowPos(NULL, parentRect.left, parentRect.top, currentRect.Width(), currentRect.Height(), SWP_SHOWWINDOW);
 
-	ShowWindow(SW_HIDE);
+	DestroyWindow();
 }
 
 
@@ -87,7 +115,12 @@ BOOL CRandomChoiceDlg::OnInitDialog()
 	CDialogEx::OnInitDialog();
 
 	// TODO:  여기에 추가 초기화 작업을 추가합니다.
-	m_liveRandomEvent = RandomEvent::GetLiveRandomEvent();
+	if (!m_bAfterLive) {
+		m_liveRandomEvent = RandomEvent::GetLiveRandomEvent();
+	}
+	else {
+		m_liveRandomEvent = RandomEvent::GetAfterRandomEvent();
+	}
 	
 	m_btnYesButton.SetWindowTextW(CA2T(m_liveRandomEvent.GetYesButton().c_str()));
 	m_btnNoButton.SetWindowTextW(CA2T(m_liveRandomEvent.GetNoButton().c_str()));

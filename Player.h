@@ -8,6 +8,15 @@
 #define BEAUTY 4
 #define EXERCISE 5
 
+#define NORMAL 0
+#define GWANGGO 1
+#define HABBANG 2
+#define SACHE 3
+
+#define NOTAPPEAR 0;
+#define DENY -1
+#define ACCEPT 1
+
 class Player {
 private:
 	std::string name;
@@ -43,11 +52,19 @@ private:
 	int skilledBeauty;
 	int skilledExercise;
 
+	//mainEvent
+
+	int mainEvent[4];
+
 public:
 	Player() : name("¿µÈñ"), day(1), follower(100), money(100), health(100),
 		game(1), talk(1), mukbang(1), beauty(1), exercise(1),
 		skilledGame(0), skilledTalk(0), skilledMukbang(0), skilledBeauty(0), skilledExercise(0)
-	{}
+	{
+		for (int i = 0; i < 4; i++) {
+			mainEvent[i] = 0;
+		}
+	}
 
 	static void InitializePlayerStat();
 
@@ -136,6 +153,11 @@ public:
 	int GetPreviousMoney() const { return previousMoney; }
 	int GetPreviousHealth() const { return previousHealth; }
 
+
+	// mainEvent
+
+	void SetMainEvent(int id, int _status) { mainEvent[id] = _status; }
+	int GetMainEvent(int id) const { return mainEvent[id]; }
 
 	static Player instance;
 };
