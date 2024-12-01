@@ -8,6 +8,10 @@
 #define BEAUTY 4
 #define EXERCISE 5
 
+#define CAMERA 0
+#define COMPUTER 1
+#define EDITOR 2
+
 class Player {
 private:
 	std::string name;
@@ -37,6 +41,8 @@ private:
 	int nextBeauty;
 	int nextExercise;
 
+	bool shopItem[3];
+
 	int skilledGame;
 	int skilledTalk;
 	int skilledMukbang;
@@ -47,7 +53,11 @@ public:
 	Player() : name("¿µÈñ"), day(1), follower(100), money(100), health(100),
 		game(1), talk(1), mukbang(1), beauty(1), exercise(1),
 		skilledGame(0), skilledTalk(0), skilledMukbang(0), skilledBeauty(0), skilledExercise(0)
-	{}
+	{
+		for (int i = 0; i < 3; i++) {
+			shopItem[i] = false;
+		}
+	}
 
 	static void InitializePlayerStat();
 
@@ -118,6 +128,12 @@ public:
 	void SkilledBeauty() { skilledBeauty += 2; }
 	void SkilledExercise() { skilledExercise += 2; }
 
+	void SetSkilledGame(const int& _skilledGame) { skilledGame = _skilledGame; }
+	void SetSkilledTalk(const int& _skilledTalk) { skilledGame = _skilledTalk; }
+	void SetSkilledMukbang(const int& _skilledMukbang) { skilledGame = _skilledMukbang; }
+	void SetSkilledBeauty(const int& _skilledBeauty) { skilledGame = _skilledBeauty; }
+	void SetSkilledExercise(const int& _skilledExercise) { skilledGame = _skilledExercise; }
+
 	int GetSkilledGame() const { return skilledGame; }
 	int GetSkilledTalk() const { return skilledTalk; }
 	int GetSkilledMukbang() const { return skilledMukbang; }
@@ -135,6 +151,10 @@ public:
 	int GetPreviousFollower() const { return previousFollower; }
 	int GetPreviousMoney() const { return previousMoney; }
 	int GetPreviousHealth() const { return previousHealth; }
+
+
+	void SetShopItem(int id, bool _bool) { shopItem[id] = _bool; }
+	bool GetShopItem(int id) const { return shopItem[id]; }
 
 
 	static Player instance;

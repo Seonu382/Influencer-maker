@@ -68,14 +68,17 @@
 #define IDC_SHOP_CAMERA                 1024
 #define IDC_BUTTON3                     1025
 #define IDC_MUKBANG_BUTTON              1025
+#define IDC_SHOP_COMPUTER               1025
 #define IDC_BUTTON4                     1026
 #define IDC_STATIC1                     1026
 #define IDC_BEAUTY_BUTTON               1026
 #define IDC_LIVE                        1026
 #define IDC_START_PIC                   1026
+#define IDC_SHOP_EDITOR                 1026
 #define IDC_BUTTON5                     1027
 #define IDC_CONFIRM_BUTTON              1027
 #define IDC_EXERCISE_BUTTON             1027
+#define IDC_SHOP_BACK                   1027
 #define IDC_EDIT1                       1028
 #define IDC_SKIP_BUTTON                 1029
 #define IDC_GAME_BUTTON                 1031
@@ -92,6 +95,12 @@
 #define IDC_STORY_BKG                   1042
 #define IDC_LIVE_CHAT                   1043
 #define IDC_TRENDRESULT                 1044
+#define IDC_PREVIOUS_MONEY              1047
+#define IDC_CURRENT_MONEY               1048
+#define IDC_PREVIOUS_HEALTH             1049
+#define IDC_CURRENT_HEALTH              1050
+#define IDC_BOUGHT                      1051
+#define IDC_LIST1                       1051
 
 // Next default values for new objects
 // 
@@ -99,7 +108,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        182
 #define _APS_NEXT_COMMAND_VALUE         32771
-#define _APS_NEXT_CONTROL_VALUE         1045
+#define _APS_NEXT_CONTROL_VALUE         1052
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif

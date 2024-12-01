@@ -25,6 +25,13 @@ CShopResultDlg::~CShopResultDlg()
 void CShopResultDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
+	//  DDX_Text(pDX, IDC_CURRENT_HEALTH, m_strCurrentHealth);
+	DDX_Control(pDX, IDC_CURRENT_HEALTH, m_tCurrentHealth);
+	//  DDX_Control(pDX, IDC_CURRENT_MONEY, m_tCurrentMoney);
+	DDX_Control(pDX, IDC_PREVIOUS_HEALTH, m_tPreviousHealth);
+	DDX_Control(pDX, IDC_PREVIOUS_MONEY, m_tPreviousMoney);
+	DDX_Control(pDX, IDC_CURRENT_MONEY, m_tCurrentMoney);
+	//  DDX_Control(pDX, IDC_BOUGHT, m_tBought);
 }
 
 
@@ -69,4 +76,30 @@ void CShopResultDlg::OnBnClickedNextdayButton()
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
 	goNextDay();
 
+}
+
+
+BOOL CShopResultDlg::OnInitDialog()
+{
+	CDialogEx::OnInitDialog();
+
+	// TODO:  여기에 추가 초기화 작업을 추가합니다.
+
+	CString previousMoney;
+	CString previousHealth;
+	CString currentMoney;
+	CString currentHealth;
+
+	previousMoney.Format(_T("%d"), Player::instance.GetPreviousMoney());
+	previousHealth.Format(_T("%d"), Player::instance.GetPreviousHealth());
+	currentMoney.Format(_T("%d"), Player::instance.GetMoney());
+	currentHealth.Format(_T("%d"), Player::instance.GetHealth());
+
+	m_tPreviousMoney.SetWindowTextW(previousMoney);
+	m_tPreviousHealth.SetWindowTextW(previousHealth);
+	m_tCurrentMoney.SetWindowTextW(currentMoney);
+	m_tCurrentHealth.SetWindowTextW(currentHealth);
+
+	return TRUE;  // return TRUE unless you set the focus to a control
+	// 예외: OCX 속성 페이지는 FALSE를 반환해야 합니다.
 }
