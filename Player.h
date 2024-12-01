@@ -20,6 +20,7 @@
 #define CAMERA 0
 #define COMPUTER 1
 #define EDITOR 2
+
 class Player {
 private:
 	std::string name;
