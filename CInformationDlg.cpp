@@ -7,6 +7,7 @@
 #include "CInformationDlg.h"
 #include "CStoryDlg.h"
 #include "Player.h"
+#include "CLiveChat.h"
 #include <string>
 
 
@@ -44,8 +45,12 @@ void CInformationDlg::OnClickedConfirmButton()
 {
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
 
+	UpdateData(TRUE);
+
 	Player::instance.InitializePlayerStat();
 	Player::instance.SetName(std::string(CT2A(m_strName)));
+
+	CLiveChat::InitializeLiveChat();
 
 	CStoryDlg* pStoryDlg = new CStoryDlg();
 	pStoryDlg->Create(IDD_STORY_DIALOG);

@@ -20,4 +20,5 @@ public:
     static std::vector<CLiveChat> GetRandomChats(bool positive, int count);
 
     static std::vector<CLiveChat> LiveChating;
+    static void InitializeLiveChat();
 };
