@@ -54,24 +54,30 @@ BOOL CLiveDlg::OnInitDialog()
 	CBitmap lamp_image;
 	HBITMAP h_old_bitmap = nullptr;
 
+	int positiveCheck = 0;
 
 	switch (Player::instance.GetCurrentTheme())
 	{
 	case GAME:
 		lamp_image.LoadBitmap(IDB_LIVE_GAME);
+		positiveCheck = Player::instance.GetGame();
 		break;
 	case TALK:
 		lamp_image.LoadBitmap(IDB_LIVE_TALK);
+		positiveCheck = Player::instance.GetTalk();
 		break;
 	case MUKBANG:
 		lamp_image.LoadBitmap(IDB_LIVE_MUKBANG);
+		positiveCheck = Player::instance.GetMukbang();
 		break;
 	case BEAUTY:
 		lamp_image.LoadBitmap(IDB_LIVE_BEAUTY);
+		positiveCheck = Player::instance.GetBeauty();
 		break;
 
 	case EXERCISE:
 		lamp_image.LoadBitmap(IDB_LIVE_EXERCISE);
+		positiveCheck = Player::instance.GetExercise();
 		break;
 	default:
 		break;
@@ -83,8 +89,10 @@ BOOL CLiveDlg::OnInitDialog()
 
 	m_cbLiveChat.ResetContent();
 
-	
-	bool positive = true;
+	bool positive = false;
+	if (positiveCheck > 100)
+		positive = true;
+
 	m_currentChatIndex = 0;
 	m_selectedChats = CLiveChat::GetRandomChats(positive, 6);
 	
