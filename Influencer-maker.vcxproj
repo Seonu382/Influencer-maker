@@ -183,6 +183,7 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CEndingDlg.h" />
     <ClInclude Include="CInformationDlg.h" />
     <ClInclude Include="CLiveChat.h" />
     <ClInclude Include="CLiveChoiceDlg.h" />
@@ -207,6 +208,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CEndingDlg.cpp" />
     <ClCompile Include="CInformationDlg.cpp" />
     <ClCompile Include="CLiveChat.cpp" />
     <ClCompile Include="CLiveChoiceDlg.cpp" />
@@ -240,6 +242,9 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\..\OneDrive\바탕 화면\KakaoTalk_20241129_230516186.bmp" />
+    <Image Include="res\BadEnding1-1.bmp" />
+    <Image Include="res\BadEnding1-2.bmp" />
+    <Image Include="res\BadEnding1-3.bmp" />
     <Image Include="res\button_start.bmp" />
     <Image Include="res\Influencer-maker.ico" />
     <Image Include="res\live_image (1).bmp" />
