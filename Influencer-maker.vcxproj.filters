@@ -215,6 +215,12 @@
     <Image Include="res\button_start.bmp">
       <Filter>리소스 파일</Filter>
     </Image>
+    <Image Include="res\main_icon (4).bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\main_icon (3).bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Media Include="..\..\..\Downloads\never-again-108445.wav">
