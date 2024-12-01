@@ -10,7 +10,7 @@
 #include "CLiveDlg.h"
 #include "CLiveChat.h"
 #include "CLiveResultDlg.h"
-#include <random>
+#include <iostream>
 
 
 
@@ -109,14 +109,12 @@ BOOL CLiveDlg::OnInitDialog()
 void CLiveDlg::OnTimer(UINT_PTR nIDEvent)
 {
 	// TODO: 여기에 메시지 처리기 코드를 추가 및/또는 기본값을 호출합니다.
-
-	std::random_device rd;
-	std::mt19937 gen(rd());
-	std::uniform_int_distribution<int> dist(0, 1);
 	
+	srand(static_cast<unsigned int>(time(NULL)));
+
 
 	if (nIDEvent == 0) {
-		if (dist(gen) == 1)
+		if (rand() % 2 == 1)
 			showRandomChoice(false);
 		else
 			SetTimer(1, 3000, NULL);
@@ -124,7 +122,7 @@ void CLiveDlg::OnTimer(UINT_PTR nIDEvent)
 		KillTimer(0);
 	}
 	else if (nIDEvent == 1) {
-		if (dist(gen) == 1) {
+		if (rand() % 2 == 1) {
 			showRandomChoice(true);
 			ShowWindow(SW_HIDE);
 			KillTimer(1);
@@ -164,9 +162,9 @@ void CLiveDlg::showRandomChoice(bool _afterLive)
 {
 	// TODO: 여기에 구현 코드 추가.
 	CRandomChoiceDlg* pRandomChoiceDlg = new CRandomChoiceDlg();
-	pRandomChoiceDlg->Create(IDD_RANDOMCHOICE_DIALOG);
 	pRandomChoiceDlg->m_bAfterLive = _afterLive;
 	pRandomChoiceDlg->setParentDialog(this);
+	pRandomChoiceDlg->Create(IDD_RANDOMCHOICE_DIALOG);
 
 	CRect parentRect, currentRect;
 	GetWindowRect(&parentRect);
