@@ -40,6 +40,7 @@ public:
 //	afx_msg BOOL OnEraseBkgnd(CDC* pDC);
 //	afx_msg BOOL OnEraseBkgnd(CDC* pDC);
 //	afx_msg HBRUSH OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor);
+//	virtual BOOL OnInitDialog();
 };
 
 CAboutDlg::CAboutDlg() : CDialogEx(IDD_ABOUTBOX)
@@ -246,4 +247,15 @@ void CInfluencermakerDlg::OnClickedStartButton()
 //
 	// TODO:  기본값이 적당하지 않으면 다른 브러시를 반환합니다.
 //	return hbr;
+//}
+
+
+//BOOL CAboutDlg::OnInitDialog()
+//{
+//	CDialogEx::OnInitDialog();
+//
+	// TODO:  여기에 추가 초기화 작업을 추가합니다.
+
+//	return TRUE;  // return TRUE unless you set the focus to a control
+	// 예외: OCX 속성 페이지는 FALSE를 반환해야 합니다.
 //}

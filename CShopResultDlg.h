@@ -25,4 +25,12 @@ public:
 	void showMainDlg();
 	void goNextDay();
 	afx_msg void OnBnClickedNextdayButton();
+	virtual BOOL OnInitDialog();
+//	CString m_strCurrentHealth;
+	CStatic m_tCurrentHealth;
+//	CStatic m_tCurrentMoney;
+	CStatic m_tPreviousHealth;
+	CStatic m_tPreviousMoney;
+	CStatic m_tCurrentMoney;
+//	CStatic m_tBought;
 };
