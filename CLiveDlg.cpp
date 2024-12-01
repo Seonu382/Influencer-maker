@@ -9,6 +9,9 @@
 #include "Player.h"
 #include "CLiveDlg.h"
 #include "CLiveChat.h"
+#include "CLiveResultDlg.h"
+#include <random>
+
 
 
 // CLiveDlg 대화 상자
@@ -106,16 +109,39 @@ BOOL CLiveDlg::OnInitDialog()
 void CLiveDlg::OnTimer(UINT_PTR nIDEvent)
 {
 	// TODO: 여기에 메시지 처리기 코드를 추가 및/또는 기본값을 호출합니다.
+
+	std::random_device rd;
+	std::mt19937 gen(rd());
+	std::uniform_int_distribution<int> dist(0, 1);
 	
 
 	if (nIDEvent == 0) {
-		showRandomChoice(false);
+		if (dist(gen) == 1)
+			showRandomChoice(false);
+		else
+			SetTimer(1, 3000, NULL);
+
 		KillTimer(0);
 	}
 	else if (nIDEvent == 1) {
-		showRandomChoice(true);
-		ShowWindow(SW_HIDE);
-		KillTimer(1);
+		if (dist(gen) == 1) {
+			showRandomChoice(true);
+			ShowWindow(SW_HIDE);
+			KillTimer(1);
+
+		}
+		else {
+			CLiveResultDlg* pLiveResultDlg = new CLiveResultDlg();
+			pLiveResultDlg->Create(IDD_LIVERESULT_DIALOG);
+
+			CRect parentRect, currentRect;
+			GetWindowRect(&parentRect);
+			pLiveResultDlg->GetWindowRect(&currentRect);
+			pLiveResultDlg->SetWindowPos(NULL, parentRect.left, parentRect.top, currentRect.Width(), currentRect.Height(), SWP_SHOWWINDOW);
+			KillTimer(1);
+
+			DestroyWindow();
+		}
 	}
 	else if (nIDEvent == 3) {
 		if (m_currentChatIndex < m_selectedChats.size()) {
@@ -128,9 +154,7 @@ void CLiveDlg::OnTimer(UINT_PTR nIDEvent)
 			KillTimer(3);
 		}
 	}
-
-
-
+	
 
 	CDialogEx::OnTimer(nIDEvent);
 }

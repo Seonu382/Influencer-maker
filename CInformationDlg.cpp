@@ -45,7 +45,7 @@ void CInformationDlg::OnClickedConfirmButton()
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
 
 	Player::instance.InitializePlayerStat();
-	Player::instance.SetName(std::string(CT2A(m_strName.GetString())));
+	Player::instance.SetName(std::string(CT2A(m_strName)));
 
 	CStoryDlg* pStoryDlg = new CStoryDlg();
 	pStoryDlg->Create(IDD_STORY_DIALOG);
