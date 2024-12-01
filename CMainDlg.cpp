@@ -35,6 +35,7 @@ void CMainDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_REST_BUTTON, m_bbRestButton);
 	DDX_Control(pDX, IDC_SHOP_BUTTON, m_bbShopButton);
 	DDX_Control(pDX, IDC_TREND_BUTTON, m_bbTrendButton);
+	DDX_Control(pDX, IDC_NAME, m_tName);
 }
 
 
@@ -125,6 +126,7 @@ void CMainDlg::OnPaint()
 	CString strFollower;
 	CString strMoney;
 	CString strHealth;
+	CString strNAME(Player::instance.GetName().c_str());
 
 	strDay.Format(_T("DAY %d"), Player::instance.GetDay());
 	strFollower.Format(_T(": %d"), Player::instance.GetFollower());
@@ -135,6 +137,7 @@ void CMainDlg::OnPaint()
 	m_tFollower.SetWindowTextW(strFollower);
 	m_tMoney.SetWindowTextW(strMoney);
 	m_tHealth.SetWindowTextW(strHealth);
+	m_tName.SetWindowTextW(strNAME);
 
 	// 그리기 메시지에 대해서는 CDialogEx::OnPaint()을(를) 호출하지 마십시오.
 }
