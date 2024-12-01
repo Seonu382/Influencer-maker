@@ -33,4 +33,6 @@ public:
 	virtual BOOL OnInitDialog();
 	CStatic m_tRandomEvent;
 	RandomEvent m_liveRandomEvent;
+	CButton m_btnYesButton;
+	CButton m_btnNoButton;
 };
