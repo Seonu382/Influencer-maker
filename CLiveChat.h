@@ -22,3 +22,5 @@ public:
     static std::vector<CLiveChat> LiveChating;
     static void InitializeLiveChat();
 };
+
+// Hello
